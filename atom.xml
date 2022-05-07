@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Calmの博客</title>
+  
+  <subtitle>Calm</subtitle>
+  <link href="https://calmchen.com/atom.xml" rel="self"/>
+  
+  <link href="https://calmchen.com/"/>
+  <updated>2022-05-07T09:01:26.837Z</updated>
+  <id>https://calmchen.com/</id>
+  
+  <author>
+    <name>Calm</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Phpstorm】常用插件</title>
+    <link href="https://calmchen.com/posts/7d64ac6f.html"/>
+    <id>https://calmchen.com/posts/7d64ac6f.html</id>
+    <published>2022-05-07T08:37:41.000Z</published>
+    <updated>2022-05-07T09:01:26.837Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;1-codeglance-代码地图&quot;&gt;1、CodeGlance - 代码地图&lt;/span&gt;&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;代码地图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="phpstorm" scheme="https://calmchen.com/categories/phpstorm/"/>
+    
+    <category term="插件" scheme="https://calmchen.com/categories/phpstorm/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/phpstorm/%E6%8F%92%E4%BB%B6/PHP/"/>
+    
+    
+    <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="phpstorm" scheme="https://calmchen.com/tags/phpstorm/"/>
+    
+    <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Hexo】常用插件</title>
+    <link href="https://calmchen.com/posts/468ec796.html"/>
+    <id>https://calmchen.com/posts/468ec796.html</id>
+    <published>2022-05-07T05:43:37.000Z</published>
+    <updated>2022-05-07T09:01:26.837Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;1-hexo-deployer-git&quot;&gt;1、hexo-deployer-git&lt;/span&gt;&lt;/h2&gt;&lt;p&gt; &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="https://calmchen.com/categories/Hexo/"/>
+    
+    <category term="插件" scheme="https://calmchen.com/categories/Hexo/%E6%8F%92%E4%BB%B6/"/>
+    
+    
+    <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="Hexo" scheme="https://calmchen.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA常用插件</title>
+    <link href="https://calmchen.com/posts/bc84784b.html"/>
+    <id>https://calmchen.com/posts/bc84784b.html</id>
+    <published>2022-05-07T05:34:09.000Z</published>
+    <updated>2022-05-07T09:01:26.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;h2&gt;&lt;span id=&quot;intellij-idea-必备-好用-优秀-插件&quot;&gt;IntelliJ idea 必备 好用 优秀 插件&lt;/span&gt;&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/"/>
+    
+    <category term="插件" scheme="https://calmchen.com/categories/IDEA/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="JAVA" scheme="https://calmchen.com/categories/IDEA/%E6%8F%92%E4%BB%B6/JAVA/"/>
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    
+    <category term="JAVA" scheme="https://calmchen.com/tags/JAVA/"/>
+    
+    <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA基本设置</title>
+    <link href="https://calmchen.com/posts/4c38ef0c.html"/>
+    <id>https://calmchen.com/posts/4c38ef0c.html</id>
+    <published>2022-05-07T02:57:18.000Z</published>
+    <updated>2022-05-07T09:01:26.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;1-字体主题设置&quot;&gt;1、字体主题设置&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;选择 File – settings – Editor – Font  按照自己喜好设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;编辑区字体设置&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/"/>
+    
+    <category term="JAVA" scheme="https://calmchen.com/categories/IDEA/JAVA/"/>
+    
+    <category term="JetBrains" scheme="https://calmchen.com/categories/IDEA/JAVA/JetBrains/"/>
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    
+    <category term="JAVA" scheme="https://calmchen.com/tags/JAVA/"/>
+    
+    <category term="JetBrains" scheme="https://calmchen.com/tags/JetBrains/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JetBrains下载</title>
+    <link href="https://calmchen.com/posts/7076a5ae.html"/>
+    <id>https://calmchen.com/posts/7076a5ae.html</id>
+    <published>2022-05-07T02:27:55.000Z</published>
+    <updated>2022-05-07T09:01:26.835Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;下载链接&quot;&gt;下载链接&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;v2021.2.2之后版本需要登录账号才能免费试用，推荐下载&lt;strong&gt;2021.2.2&lt;/strong&gt;版本&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/"/>
+    
+    <category term="JetBrains" scheme="https://calmchen.com/categories/IDEA/JetBrains/"/>
+    
+    <category term="激活" scheme="https://calmchen.com/categories/IDEA/JetBrains/%E6%BF%80%E6%B4%BB/"/>
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    
+    <category term="JetBrains" scheme="https://calmchen.com/tags/JetBrains/"/>
+    
+    <category term="激活" scheme="https://calmchen.com/tags/%E6%BF%80%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown基本语法</title>
+    <link href="https://calmchen.com/posts/5d36ff15.html"/>
+    <id>https://calmchen.com/posts/5d36ff15.html</id>
+    <published>2022-05-06T05:58:48.000Z</published>
+    <updated>2022-05-07T09:01:26.836Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;总览&quot;&gt;总览&lt;/span&gt;&lt;/h1&gt;&lt;p&gt;几乎所有Markdown应用程序都支持John</summary>
+        
+      
+    
+    
+    
+    <category term="Markdown" scheme="https://calmchen.com/categories/Markdown/"/>
+    
+    
+    <category term="Markdown" scheme="https://calmchen.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iPic+七牛云图床</title>
+    <link href="https://calmchen.com/posts/b5c89f8e.html"/>
+    <id>https://calmchen.com/posts/b5c89f8e.html</id>
+    <published>2022-05-06T05:54:42.000Z</published>
+    <updated>2022-05-07T09:01:26.837Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;注册七牛云&quot;&gt;注册七牛云&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span id=&quot;注册七牛账户&quot;&gt;注册七牛账户&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;这点比较简单，直接到 &lt;a href=&quot;https://portal.qiniu.com/home&quot;&gt;这里&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="七牛云" scheme="https://calmchen.com/categories/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+    <category term="iPic" scheme="https://calmchen.com/categories/%E4%B8%83%E7%89%9B%E4%BA%91/iPic/"/>
+    
+    
+    <category term="七牛云" scheme="https://calmchen.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+    <category term="iPic" scheme="https://calmchen.com/tags/iPic/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【转载】IDEA破解</title>
+    <link href="https://calmchen.com/posts/ecdab4ad.html"/>
+    <id>https://calmchen.com/posts/ecdab4ad.html</id>
+    <published>2022-04-29T08:05:39.000Z</published>
+    <updated>2022-05-07T09:01:26.838Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;一-下载最新的-idea-2022-版本安装包&quot;&gt;一、下载最新的 IDEA 2022 版本安装包&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;我们先从 IDEA 官网下载 IDEA 2022 最新版本的安装包，下载链接如下：&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    
+    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel + Elasticsearch 实现中文搜索</title>
+    <link href="https://calmchen.com/posts/3acc6de0.html"/>
+    <id>https://calmchen.com/posts/3acc6de0.html</id>
+    <published>2022-04-29T07:52:08.000Z</published>
+    <updated>2022-05-07T09:01:26.835Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;laravel-elasticsearch-实现中文搜索&quot;&gt;Laravel + Elasticsearch 实现中文搜索&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span id=&quot;步骤&quot;&gt;步骤：&lt;/span&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Laravel7 配置</summary>
+        
+      
+    
+    
+    
+    <category term="Laravel" scheme="https://calmchen.com/categories/Laravel/"/>
+    
+    <category term="Elasticsearch" scheme="https://calmchen.com/categories/Laravel/Elasticsearch/"/>
+    
+    
+    <category term="Elasticsearch" scheme="https://calmchen.com/tags/Elasticsearch/"/>
+    
+    <category term="Laravel" scheme="https://calmchen.com/tags/Laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ELK部署Linux</title>
+    <link href="https://calmchen.com/posts/7616fb11.html"/>
+    <id>https://calmchen.com/posts/7616fb11.html</id>
+    <published>2022-04-29T07:16:10.000Z</published>
+    <updated>2022-05-07T09:01:26.834Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;1-elasticsearch简介&quot;&gt;&lt;strong&gt;1.</summary>
+        
+      
+    
+    
+    
+    <category term="Linux" scheme="https://calmchen.com/categories/Linux/"/>
+    
+    <category term="Elasticsearch" scheme="https://calmchen.com/categories/Linux/Elasticsearch/"/>
+    
+    
+    <category term="Linux" scheme="https://calmchen.com/tags/Linux/"/>
+    
+    <category term="Elasticsearch" scheme="https://calmchen.com/tags/Elasticsearch/"/>
+    
+  </entry>
+  
+</feed>
