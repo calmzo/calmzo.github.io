@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-05-13T03:42:22.444Z</updated>
+  <updated>2022-05-16T08:47:30.670Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -17,18 +17,155 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【JAVA】环境配置</title>
+    <link href="https://calmchen.com/posts/817a1f94.html"/>
+    <id>https://calmchen.com/posts/817a1f94.html</id>
+    <published>2022-05-16T03:34:52.000Z</published>
+    <updated>2022-05-16T08:47:30.670Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前期准备&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span id=&quot;1-jdk安装&quot;&gt;1、Jdk安装&lt;/span&gt;&lt;/h2&gt;&lt;h3&gt;&lt;span id=&quot;1下载合适版本&quot;&gt;1.下载合适版本：&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;Java</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
+    
+    <category term="Jdk" scheme="https://calmchen.com/categories/Java/Jdk/"/>
+    
+    <category term="SpringCloud" scheme="https://calmchen.com/categories/Java/Jdk/SpringCloud/"/>
+    
+    
+    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
+    
+    <category term="Jdk" scheme="https://calmchen.com/tags/Jdk/"/>
+    
+    <category term="SpringCloud" scheme="https://calmchen.com/tags/SpringCloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【IDEA】常见问题-解决方案</title>
+    <link href="https://calmchen.com/posts/fdcf83a4.html"/>
+    <id>https://calmchen.com/posts/fdcf83a4.html</id>
+    <published>2022-05-16T03:19:52.000Z</published>
+    <updated>2022-05-16T08:47:30.666Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;【IDEA】常见问题-解决方案&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;&lt;span id=&quot;1-project-jdk-is-not-define&quot;&gt;1、‘project JDK is not</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
+    
+    <category term="Idea" scheme="https://calmchen.com/categories/Java/Idea/"/>
+    
+    
+    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
+    
+    <category term="Idea" scheme="https://calmchen.com/tags/Idea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>idea设置Maven</title>
+    <link href="https://calmchen.com/posts/56a0c2bb.html"/>
+    <id>https://calmchen.com/posts/56a0c2bb.html</id>
+    <published>2022-05-13T07:00:05.000Z</published>
+    <updated>2022-05-16T03:31:59.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt; Maven版本：3.6.3&lt;br&gt; IDEA版本：2021.3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1&gt;&lt;span id=&quot;1-idea集成maven插件&quot;&gt;1、IDEA集成Maven插件&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
+    
+    <category term="IDEA" scheme="https://calmchen.com/categories/Java/IDEA/"/>
+    
+    <category term="Maven" scheme="https://calmchen.com/categories/Java/IDEA/Maven/"/>
+    
+    
+    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    
+    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
+    
+    <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mac安装maven</title>
+    <link href="https://calmchen.com/posts/25ff2e8c.html"/>
+    <id>https://calmchen.com/posts/25ff2e8c.html</id>
+    <published>2022-05-13T05:55:40.000Z</published>
+    <updated>2022-05-16T03:48:49.725Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;1官网下载然后解压&quot;&gt;1.,然后解压&lt;/span&gt;&lt;/h2&gt;&lt;p&gt;推荐&lt;a href=&quot;https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/&quot;&gt;maven3.6.3&lt;/a&gt; 版本</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
+    
+    <category term="Mac" scheme="https://calmchen.com/categories/Java/Mac/"/>
+    
+    <category term="Maven" scheme="https://calmchen.com/categories/Java/Mac/Maven/"/>
+    
+    
+    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
+    
+    <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
+    
+    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【MAC】装机软件</title>
     <link href="https://calmchen.com/posts/55a24faf.html"/>
     <id>https://calmchen.com/posts/55a24faf.html</id>
     <published>2022-05-13T02:31:38.000Z</published>
-    <updated>2022-05-13T03:42:22.444Z</updated>
+    <updated>2022-05-13T05:35:32.135Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1&gt;&lt;span id=&quot;自用mac装机软件&quot;&gt;自用Mac装机软件&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span</summary>
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;自用mac装机软件&quot;&gt;自用Mac装机软件&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span id=&quot;1-app-store直接下载&quot;&gt;1、App</summary>
         
       
     
