@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-05-16T08:47:30.670Z</updated>
+  <updated>2022-07-11T08:18:47.340Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -17,11 +17,69 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【Mac编译安装PHP扩展】</title>
+    <link href="https://calmchen.com/posts/3fc5bd43.html"/>
+    <id>https://calmchen.com/posts/3fc5bd43.html</id>
+    <published>2022-07-11T07:29:17.000Z</published>
+    <updated>2022-07-11T08:18:47.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;&lt;span id=&quot;mac安装php扩展&quot;&gt;Mac安装PHP扩展&lt;/span&gt;&lt;/h1&gt;&lt;h2&gt;&lt;span id=&quot;查看phpini位置&quot;&gt;查看php.ini位置&lt;/span&gt;&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="Mac" scheme="https://calmchen.com/categories/Mac/"/>
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/Mac/PHP/"/>
+    
+    <category term="swoole" scheme="https://calmchen.com/categories/Mac/PHP/swoole/"/>
+    
+    
+    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
+    
+    <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
+    
+    <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Git不要只会pull和push，试试这5条提高效率的命令】</title>
+    <link href="https://calmchen.com/posts/946f16e6.html"/>
+    <id>https://calmchen.com/posts/946f16e6.html</id>
+    <published>2022-06-23T12:09:09.000Z</published>
+    <updated>2022-06-23T12:30:51.588Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2&gt;&lt;span id=&quot;git不要只会pull和push试试这5条提高效率的命令&quot;&gt;Git不要只会pull和push，试试这5条提高效率的命令&lt;/span&gt;&lt;/h2&gt;&lt;h3&gt;&lt;span id=&quot;转载链接出来吧皮卡丘&quot;&gt;转载链接：&lt;/span&gt;&lt;/h3&gt;&lt;h3&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="Git" scheme="https://calmchen.com/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://calmchen.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【JAVA】环境配置</title>
     <link href="https://calmchen.com/posts/817a1f94.html"/>
     <id>https://calmchen.com/posts/817a1f94.html</id>
     <published>2022-05-16T03:34:52.000Z</published>
-    <updated>2022-05-16T08:47:30.670Z</updated>
+    <updated>2022-05-16T08:56:52.343Z</updated>
     
     
       
@@ -158,7 +216,7 @@
     <link href="https://calmchen.com/posts/55a24faf.html"/>
     <id>https://calmchen.com/posts/55a24faf.html</id>
     <published>2022-05-13T02:31:38.000Z</published>
-    <updated>2022-05-13T05:35:32.135Z</updated>
+    <updated>2022-05-23T02:22:22.922Z</updated>
     
     
       
@@ -212,9 +270,9 @@
     
     <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
     
-    <category term="phpstorm" scheme="https://calmchen.com/tags/phpstorm/"/>
-    
     <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
+    
+    <category term="phpstorm" scheme="https://calmchen.com/tags/phpstorm/"/>
     
   </entry>
   
