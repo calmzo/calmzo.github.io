@@ -314,13 +314,13 @@
                 <blockquote>
 <p>前期准备</p>
 </blockquote>
-<h2><span id="1-jdk安装">1、Jdk安装</span></h2><h3><span id="1下载合适版本">1.下载合适版本：</span></h3><p>Java JDK下载地址：<br><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">Java JDK下载地址</a><br>需要下载macOS下的dmg的格式的，根据Mac芯片的不同下载不同的版本；inter芯片的下载X64版本，M芯片下载Arm64版本</p>
-<h3><span id="2点击安装">2.点击安装</span></h3><p>双击下载好的dmg<br>通过JDK官方下载地址中的dmg文件进行安装后，如果想知道具体安装到哪个目录，可以执行下面的命令进行查看：</p>
+<h2 id="1、Jdk安装"><a href="#1、Jdk安装" class="headerlink" title="1、Jdk安装"></a>1、Jdk安装</h2><h3 id="1-下载合适版本："><a href="#1-下载合适版本：" class="headerlink" title="1.下载合适版本："></a>1.下载合适版本：</h3><p>Java JDK下载地址：<br><a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/downloads/">Java JDK下载地址</a><br>需要下载macOS下的dmg的格式的，根据Mac芯片的不同下载不同的版本；inter芯片的下载X64版本，M芯片下载Arm64版本</p>
+<h3 id="2-点击安装"><a href="#2-点击安装" class="headerlink" title="2.点击安装"></a>2.点击安装</h3><p>双击下载好的dmg<br>通过JDK官方下载地址中的dmg文件进行安装后，如果想知道具体安装到哪个目录，可以执行下面的命令进行查看：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">/usr/libexec/java_home -V<br></code></pre></td></tr></table></figure>
 <p>效果：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">Matching Java Virtual Machines (2):<br>    1.8.331.09 (x86_64) &quot;Oracle Corporation&quot; - &quot;Java&quot; /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home<br>    1.8.0_331 (x86_64) &quot;Oracle Corporation&quot; - &quot;Java SE 8&quot; /Library/Java/JavaVirtualMachines/jdk1.8.0_331.jdk/Contents/Home<br>/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home<br></code></pre></td></tr></table></figure>
 
-<h3><span id="3-环境变量配置">3、环境变量配置</span></h3><p>编辑***.bash_profile*** 文件，这是 Mac 配置各种环境变量的地方</p>
+<h3 id="3、环境变量配置"><a href="#3、环境变量配置" class="headerlink" title="3、环境变量配置"></a>3、环境变量配置</h3><p>编辑***.bash_profile*** 文件，这是 Mac 配置各种环境变量的地方</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.bash_profile<br></code></pre></td></tr></table></figure>
 <p>编辑</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">JAVA_HOME</span>=/Library/Java/JavaVirtualMachines/jdk1.8.0_331.jdk/Contents<br><span class="hljs-attribute">CLASSPATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/lib/tools.jar:$JAVA_HOME/lib/dt.jar:.<br><span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$JAVA_HOME</span>/bin:$PATH:.<br><span class="hljs-built_in">export</span> JAVA_HOME<br><span class="hljs-built_in">export</span> PATH<br><span class="hljs-built_in">export</span> CLASSPATH<br></code></pre></td></tr></table></figure>
@@ -331,11 +331,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">java -version<br></code></pre></td></tr></table></figure>
 <p>显示</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">java </span>version <span class="hljs-string">&quot;1.8.0_331&quot;</span><br><span class="hljs-keyword">Java(TM) </span>SE Runtime Environment (<span class="hljs-keyword">build </span><span class="hljs-number">1</span>.<span class="hljs-number">8</span>.<span class="hljs-number">0</span>_331-<span class="hljs-keyword">b09)</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">Java </span>HotSpot(TM) <span class="hljs-number">64</span>-<span class="hljs-keyword">Bit </span>Server VM (<span class="hljs-keyword">build </span><span class="hljs-number">25</span>.<span class="hljs-number">331</span>-<span class="hljs-keyword">b09, </span>mixed mode)<br></code></pre></td></tr></table></figure>
-<h2><span id="2-maven安装">2、Maven安装</span></h2><p>见mac安装maven</p>
-<h2><span id="3-mac-nacos部署">3、mac Nacos部署</span></h2><h3><span id="1-了解nacos">1、了解Nacos</span></h3><blockquote>
+<h2 id="2、Maven安装"><a href="#2、Maven安装" class="headerlink" title="2、Maven安装"></a>2、Maven安装</h2><p>见mac安装maven</p>
+<h2 id="3、mac-Nacos部署"><a href="#3、mac-Nacos部署" class="headerlink" title="3、mac Nacos部署"></a>3、mac Nacos部署</h2><h3 id="1、了解Nacos"><a href="#1、了解Nacos" class="headerlink" title="1、了解Nacos"></a>1、了解Nacos</h3><blockquote>
 <p>了解Nacos<br>什么是Nacos <a target="_blank" rel="noopener" href="https://nacos.io/zh-cn/docs/what-is-nacos.html">https://nacos.io/zh-cn/docs/what-is-nacos.html</a></p>
 </blockquote>
-<h3><span id="2-下载">2、下载</span></h3><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/Nacos/releases">https://github.com/alibaba/Nacos/releases</a></p>
+<h3 id="2、下载"><a href="#2、下载" class="headerlink" title="2、下载"></a>2、下载</h3><p>下载地址：<a target="_blank" rel="noopener" href="https://github.com/alibaba/Nacos/releases">https://github.com/alibaba/Nacos/releases</a></p>
 <p>包说明</p>
 <blockquote>
 <ul>
@@ -346,7 +346,7 @@
 <li>data          nacos自带apache-derby数据库，data存放数据内容</li>
 </ul>
 </blockquote>
-<h2><span id="3-操作">3、操作</span></h2><p>终端切换到nacos下的bin目录</p>
+<h2 id="3、操作"><a href="#3、操作" class="headerlink" title="3、操作"></a>3、操作</h2><p>终端切换到nacos下的bin目录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd bin<br></code></pre></td></tr></table></figure>
 <p>进入解压目录的bin目录下，打开终端，输入命令启动，输出nacos is starting with standalone即为成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sh startup.sh -m standalone<br></code></pre></td></tr></table></figure>
