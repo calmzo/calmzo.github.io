@@ -102,7 +102,7 @@
 
   
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="成小琴快跑" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -301,7 +301,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：20 天前
+                    本文最后更新于：21 天前
                   
                 
               </p>
@@ -324,16 +324,16 @@
 <h4><span id="应用场景">应用场景</span></h4><p>我猜你心里一定在想：为什么要变干净？<br>应用场景：某一天你正在 feature 分支开发新需求，突然产品经理跑过来说线上有bug，必须马上修复。而此时你的功能开发到一半，于是你急忙想切到 master 分支，然后你就会看到以下报错：</p>
 <p>因为当前有文件更改了，需要提交commit保持工作区干净才能切分支。由于情况紧急，你只有急忙 commit 上去，commit 信息也随便写了个“暂存代码”，于是该分支提交记录就留了一条黑历史…(真人真事，看过这种提交)</p>
 <h4><span id="命令使用">命令使用</span></h4><p>如果你学会 stash，就不用那么狼狈了。你只需要：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git stash<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git stash<br></code></pre></td></tr></table></figure>
 <p>就这么简单，代码就被存起来了。<br>当你修复完线上问题，切回 feature 分支，想恢复代码也只需要：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git stash apply<br><br></code></pre></td></tr></table></figure>
-<h4><span id="相关命令">相关命令</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码并添加备注</span><br>git stash save &quot;备注的内容&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">列出stash的所有记录</span><br>git stash list<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除stash的所有记录</span><br>git stash clear<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash</span><br>git stash apply<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash，随后删除该记录</span><br>git stash pop<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码并添加备注</span><br>git stash save &quot;备注的内容&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">列出stash的所有记录</span><br>git stash list<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除stash的所有记录</span><br>git stash clear<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash</span><br>git stash apply<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash，随后删除该记录</span><br>git stash pop<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除最近的一次stash</span><br>git stash drop<br></code></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git stash apply<br><br></code></pre></td></tr></table></figure>
+<h4><span id="相关命令">相关命令</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">保存当前未commit的代码并添加备注</span><br>git stash save &quot;备注的内容&quot;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">列出stash的所有记录</span><br>git stash list<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除stash的所有记录</span><br>git stash clear<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash</span><br>git stash apply<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">应用最近一次的stash，随后删除该记录</span><br>git stash pop<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">删除最近的一次stash</span><br>git stash drop<br></code></pre></td></tr></table></figure>
 
 <p>当有多条 stash，可以指定操作stash，首先使用stash list 列出所有记录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git stash list</span><br>stash@&#123;0&#125;: WIP on ...<br>stash@&#123;1&#125;: WIP on ...<br>stash@&#123;2&#125;: On ...<br></code></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git stash list</span><br>stash@&#123;0&#125;: WIP on ...<br>stash@&#123;1&#125;: WIP on ...<br>stash@&#123;2&#125;: On ...<br></code></pre></td></tr></table></figure>
 
 <p>应用第二条记录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git stash apply stash@&#123;1&#125;</span><br><br></code></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">git stash apply stash@&#123;1&#125;</span><br><br></code></pre></td></tr></table></figure>
 <p>pop，drop 同理。</p>
 <h4><span id="vscode-集成">vscode 集成</span></h4><p>stash 代码</p>
 <p>填写备注内容，也可以不填直接Enter</p>
@@ -349,11 +349,11 @@
 <p>回退你已提交的 commit，并将 commit 的修改内容放回到暂存区。<br>一般我们在使用 reset 命令时，<em><strong>git reset –hard</strong></em> 会被提及的比较多，它能让 commit 记录强制回溯到某一个节点。而 <em><strong>git reset –soft</strong></em> 的作用正如其名，***–soft*** (柔软的) 除了回溯节点外，还会保留节点的修改内容。</p>
 <h4><span id="应用场景">应用场景</span></h4><p>回溯节点，为什么要保留修改内容？<br>应用场景1：有时候手滑不小心把不该提交的内容 commit 了，这时想改回来，只能再 commit 一次，又多一条“黑历史”。<br>应用场景2：规范些的团队，一般对于 commit 的内容要求职责明确，颗粒度要细，便于后续出现问题排查。本来属于两块不同功能的修改，一起 commit 上去，这种就属于不规范。这次恰好又手滑了，一次性 commit 上去。</p>
 <h4><span id="命令使用">命令使用</span></h4><p>学会 <em><strong>reset –soft</strong></em> 之后，你只需要：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">恢复最近一次 commit</span><br>git reset --soft HEAD^<br></code></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">恢复最近一次 commit</span><br>git reset --soft HEAD^<br></code></pre></td></tr></table></figure>
 
 <p><strong>reset –soft</strong> 相当于后悔药，给你重新改过的机会。对于上面的场景，就可以再次修改重新提交，保持干净的 commit 记录。<br>以上说的是还未 push 的commit。对于已经 push 的 commit，也可以使用该命令，不过再次 push 时，由于远程分支和本地分支有差异，需要强制推送 <strong>git push -f</strong> 来覆盖被 reset 的 commit。<br>还有一点需要注意，在 <strong>reset –soft</strong> 指定 commit 号时，会将该 commit 到最近一次 commit 的所有修改内容全部恢复，而不是只针对该 commit。<br>举个栗子：<br>commit 记录有 c、b、a。</p>
 <p>reset 到 a。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git reset --soft 1a900ac29eba73ce817bf959f82ffcb0bfa38f75<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git reset --soft 1a900ac29eba73ce817bf959f82ffcb0bfa38f75<br><br></code></pre></td></tr></table></figure>
 <p>此时的 HEAD 到了 a，而 b、c 的修改内容都回到了暂存区。</p>
 <h3><span id="cherry-pick">cherry-pick</span></h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-cherry-pick">官方文档</a><br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html">git cherry-pick 教程</a><br>描述</p>
 <blockquote>
@@ -369,12 +369,12 @@
 <ul>
 <li>一次转移多个提交：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git cherry-pick commit1 commit2<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git cherry-pick commit1 commit2<br><br></code></pre></td></tr></table></figure>
 <p>上面的命令将 commit1 和 commit2 两个提交应用到当前分支。</p>
 <ul>
 <li>多个连续的commit，也可区间复制：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git cherry-pick commit1^..commit2<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git cherry-pick commit1^..commit2<br><br></code></pre></td></tr></table></figure>
 <p>上面的命令将 commit1 到 commit2 这个区间的 commit 都应用到当前分支（包含commit1、commit2），commit1 是最早的提交。</p>
 <h4><span id="cherry-pick-代码冲突">cherry-pick 代码冲突</span></h4><p>在 cherry-pick 多个commit时，可能会遇到代码冲突，这时 cherry-pick 会停下来，让用户决定如何继续操作。下面看看怎么解决这种场景。</p>
 <p>还是 feature 分支，现在需要把 c、d、e 都复制到 master 分支上。先把起点c和终点e的 commitHash 记下来。</p>
@@ -383,12 +383,12 @@
 <ul>
 <li>放弃 <strong>cherry-pick</strong>：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">gits cherry-pick --abort<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">gits cherry-pick --abort<br><br></code></pre></td></tr></table></figure>
 <p>回到操作前的样子，就像什么都没发生过。</p>
 <ul>
 <li>退出 <strong>cherry-pick</strong>：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git cherry-pick --quit<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git cherry-pick --quit<br><br></code></pre></td></tr></table></figure>
 <p>不回到操作前的样子。即保留已经 cherry-pick 成功的 commit，并退出 cherry-pick 流程。</p>
 <h3><span id="revert">revert</span></h3><ul>
 <li><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-revert">官方文档</a><br>描述</li>
@@ -399,7 +399,7 @@
 <p>将现有的提交还原，恢复提交的内容，并生成一条还原记录。</p>
 <h4><span id="应用场景">应用场景</span></h4><p>应用场景：有一天测试突然跟你说，你开发上线的功能有问题，需要马上撤回，否则会影响到系统使用。这时可能会想到用 reset 回退，可是你看了看分支上最新的提交还有其他同事的代码，用 reset 会把这部分代码也撤回了。由于情况紧急，又想不到好方法，还是任性的使用 reset，然后再让同事把他的代码合一遍（同事听到想打人），于是你的技术形象在同事眼里一落千丈。</p>
 <h4><span id="命令使用">命令使用</span></h4><h5><span id="revert-普通提交">revert 普通提交</span></h5><p>学会 revert 之后，立马就可以拯救这种尴尬的情况。<br>现在 master 记录如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git revert 21dcd937fe555f58841b17466a99118deb489212<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git revert 21dcd937fe555f58841b17466a99118deb489212<br><br></code></pre></td></tr></table></figure>
 <p>revert 掉自己提交的 commit。</p>
 <p>因为 revert 会生成一条新的提交记录，这时会让你编辑提交信息，编辑完后 :wq 保存退出就好了。</p>
 <p>再来看下最新的 log，生成了一条 revert 记录，虽然自己之前的提交记录还是会保留着，但你修改的代码内容已经被撤回了。</p>
@@ -408,7 +408,7 @@
 <p>使用刚刚同样的 revert 方法，会发现命令行报错了。<br>为什么会这样？在官方文档中有解释。</p>
 <p>通常无法 revert 合并，因为您不知道合并的哪一侧应被视为主线。此选项指定主线的父编号（从1开始），并允许 revert 反转相对于指定父编号的更改</p>
 <p>我的理解是因为合并提交是两条分支的交集节点，而 git 不知道需要撤销的哪一条分支，需要添加参数 -m 指定主线分支，保留主线分支的代码，另一条则被撤销。<br>-m 后面要跟一个 parent number 标识出”主线”，一般使用 1 保留主分支代码。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git revert -m 1 <commithash><br><br></commithash></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git revert -m 1 &lt;commitHash&gt;<br><br></code></pre></td></tr></table></figure>
 <h5><span id="revert-合并提交后再次合并分支会失效">revert 合并提交后，再次合并分支会失效</span></h5><p>还是上面的场景，在 master 分支 revert 合并提交后，然后切到 feature 分支修复好 bug，再合并到 master 分支时，会发现之前被 revert 的修改内容没有重新合并进来。<br>因为使用 revert 后， feature 分支的 commit 还是会保留在 master 分支的记录中，当你再次合并进去时，git 判断有相同的 commitHash，就忽略了相关 commit 修改的内容。<br>这时就需要 revert 掉之前 revert 的合并提交，有点拗口，接下来看操作吧。</p>
 <p>现在 master 的记录是这样的。</p>
 <p>再次使用 revert，之前被 revert 的修改内容就又回来了。</p>
@@ -424,14 +424,14 @@
 <p>这时用 <strong>git reflog</strong> 查看历史记录，把错误提交的那次 commitHash 记下。</p>
 <p>再次 reset 回去，就会发现 b 回来了。</p>
 <h4><span id="设置-git-短命令">设置 Git 短命令</span></h4><p>对我这种喜欢敲命令而不用图形化工具的爱好者来说，设置短命令可以很好的提高效率。下面介绍两种设置短命令的方式。</p>
-<h5><span id="方式一">方式一</span></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">git config --global alias.ps push<br><br></code></pre></td></tr></table></figure>
+<h5><span id="方式一">方式一</span></h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">git config --global alias.ps push<br><br></code></pre></td></tr></table></figure>
 <h5><span id="方式二">方式二</span></h5><p>打开全局配置文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">vim ~/.gitconfig<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.gitconfig<br><br></code></pre></td></tr></table></figure>
 <p>写入内容</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class=" language-hljs markdown"><code class="language-hljs markdown">[alias]<br>co = checkout<br>ps = push<br>pl = pull<br>mer = merge --no-ff<br>cp = cherry-pick<br></code></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs markdown">[alias]<br>co = checkout<br>ps = push<br>pl = pull<br>mer = merge --no-ff<br>cp = cherry-pick<br></code></pre></td></tr></table></figure>
 
 <p>使用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash"><code class="language-hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">等同于 git cherry-pick <commithash></commithash></span><br>git cp <commithash><br></commithash></code></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">等同于 git cherry-pick &lt;commitHash&gt;</span><br>git cp &lt;commitHash&gt;<br></code></pre></td></tr></table></figure>
 
 <h3><span id="总结">总结</span></h3><p>本文主要分享了5个在开发中实用的 Git 命令和设置短命令的方式。</p>
 <ul>

@@ -104,7 +104,7 @@
 
   
 <meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="成小琴快跑" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -312,20 +312,20 @@
               <div class="markdown-body">
                 
                 <h2><span id="1官网下载然后解压">1.,然后解压</span></h2><p>推荐<a target="_blank" rel="noopener" href="https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/">maven3.6.3</a> 版本 maven的版本太高了 idea会报错</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs text"><code class="language-hljs text">java.lang.RuntimeException: org.codehaus.plexus.component.repository.exception.ComponentLookupExcept<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">java.lang.RuntimeException: org.codehaus.plexus.component.repository.exception.ComponentLookupExcept<br></code></pre></td></tr></table></figure>
 
 <h2><span id="2解压后的路径">2.解压后的路径</span></h2><p>比如我的是 <strong>/usr/local/maven/apache-maven-3.6.3</strong></p>
-<h2><span id="3打开终端">3.打开终端</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">vi ~/.bash_profile<br></code></pre></td></tr></table></figure>
-<h2><span id="4添加这两行并保存">4.添加这两行，并保存</span></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class=" language-hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">M2_HOME</span>=/usr/local/maven/apache-maven-3.6.3<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable"><code class="language-hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">M2_HOME</span>=/usr/local/maven/apache-maven-3.6.3<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$PATH</span>:$M2_HOME/bin<br></code></span></pre></td></tr></table></figure>
-<h2><span id="5终端输入使配置文件生效">5.终端输入，使配置文件生效</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">source ~/.bash_profile<br></code></pre></td></tr></table></figure>
-<h2><span id="6终端输入mvn-v-查看是否安装成功">6.终端输入mvn -v 查看是否安装成功</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">mvn -v<br></code></pre></td></tr></table></figure>
+<h2><span id="3打开终端">3.打开终端</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vi ~/.bash_profile<br></code></pre></td></tr></table></figure>
+<h2><span id="4添加这两行并保存">4.添加这两行，并保存</span></h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">M2_HOME</span>=/usr/local/maven/apache-maven-3.6.3<br><span class="hljs-built_in">export</span> <span class="hljs-attribute">PATH</span>=<span class="hljs-variable">$PATH</span>:$M2_HOME/bin<br></code></pre></td></tr></table></figure>
+<h2><span id="5终端输入使配置文件生效">5.终端输入，使配置文件生效</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source ~/.bash_profile<br></code></pre></td></tr></table></figure>
+<h2><span id="6终端输入mvn-v-查看是否安装成功">6.终端输入mvn -v 查看是否安装成功</span></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mvn -v<br></code></pre></td></tr></table></figure>
 
 
 <h1><span id="补充">补充：</span></h1><blockquote>
 <p>1、source <del>/.bash_profile 只能解决一次问题，因为重新打开终端，执行mvn相关命令，依然报错“zsh: command not found: mvn”，需要再执行source ~/.bash_profile才可以<br>原因：zsh的配置文件没有加载</del>/.bash_profile的配置项。<br>解决方法：在zsh的配置文件中添加source ~/.bash_profile配置项的内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">vim ~/.zshrc<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.zshrc<br></code></pre></td></tr></table></figure>
 <p>添加</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class=" language-hljs shell"><code class="language-hljs shell">source ~/.bash_profile<br></code></pre></td></tr></table></figure></blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source ~/.bash_profile<br></code></pre></td></tr></table></figure></blockquote>
 
                 
               </div>
