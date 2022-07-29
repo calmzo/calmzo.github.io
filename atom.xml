@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-07-28T03:50:26.971Z</updated>
+  <updated>2022-07-29T08:13:38.267Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github开源项目传送门【整理ing】</title>
+    <link href="https://calmchen.com/posts/3b686fb2.html"/>
+    <id>https://calmchen.com/posts/3b686fb2.html</id>
+    <published>2022-07-29T06:15:17.000Z</published>
+    <updated>2022-07-29T08:13:38.267Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;github开源项目传送门&quot;&gt;&lt;a href=&quot;#github开源项目传送门&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Github" scheme="https://calmchen.com/categories/Github/"/>
+    
+    
+    <category term="github" scheme="https://calmchen.com/tags/github/"/>
+    
+    <category term="awesome" scheme="https://calmchen.com/tags/awesome/"/>
+    
+    <category term="去水印" scheme="https://calmchen.com/tags/%E5%8E%BB%E6%B0%B4%E5%8D%B0/"/>
+    
+    <category term="laravel编码" scheme="https://calmchen.com/tags/laravel%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="pdf" scheme="https://calmchen.com/tags/pdf/"/>
+    
+    <category term="邮件" scheme="https://calmchen.com/tags/%E9%82%AE%E4%BB%B6/"/>
+    
+    <category term="短信" scheme="https://calmchen.com/tags/%E7%9F%AD%E4%BF%A1/"/>
+    
+    <category term="代码整洁之道" scheme="https://calmchen.com/tags/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93/"/>
+    
+    <category term="curl" scheme="https://calmchen.com/tags/curl/"/>
+    
+    <category term="开源" scheme="https://calmchen.com/tags/%E5%BC%80%E6%BA%90/"/>
+    
+    <category term="文档管理" scheme="https://calmchen.com/tags/%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86/"/>
+    
+    <category term="面试" scheme="https://calmchen.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+    <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
+    
+    <category term="在线教育" scheme="https://calmchen.com/tags/%E5%9C%A8%E7%BA%BF%E6%95%99%E8%82%B2/"/>
+    
+    <category term="轻量" scheme="https://calmchen.com/tags/%E8%BD%BB%E9%87%8F/"/>
+    
+    <category term="存储平台" scheme="https://calmchen.com/tags/%E5%AD%98%E5%82%A8%E5%B9%B3%E5%8F%B0/"/>
+    
+    <category term="博客" scheme="https://calmchen.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="漏洞" scheme="https://calmchen.com/tags/%E6%BC%8F%E6%B4%9E/"/>
+    
+    <category term="中文转拼音" scheme="https://calmchen.com/tags/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>开发人员的画图技巧</title>
@@ -348,9 +409,9 @@
     
     <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
     
-    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
-    
     <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
+    
+    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
     
   </entry>
   
@@ -638,39 +699,6 @@
     <category term="JAVA" scheme="https://calmchen.com/tags/JAVA/"/>
     
     <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA基本设置</title>
-    <link href="https://calmchen.com/posts/4c38ef0c.html"/>
-    <id>https://calmchen.com/posts/4c38ef0c.html</id>
-    <published>2022-05-07T02:57:18.000Z</published>
-    <updated>2022-05-07T09:01:26.834Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、字体主题设置&quot;&gt;&lt;a href=&quot;#1、字体主题设置&quot; class=&quot;headerlink&quot; title=&quot;1、字体主题设置&quot;&gt;&lt;/a&gt;1、字体主题设置&lt;/h2&gt;&lt;p&gt;选择 File – settings – Editor – Font </summary>
-        
-      
-    
-    
-    
-    <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/"/>
-    
-    <category term="JAVA" scheme="https://calmchen.com/categories/IDEA/JAVA/"/>
-    
-    <category term="JetBrains" scheme="https://calmchen.com/categories/IDEA/JAVA/JetBrains/"/>
-    
-    
-    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
-    
-    <category term="JAVA" scheme="https://calmchen.com/tags/JAVA/"/>
-    
-    <category term="JetBrains" scheme="https://calmchen.com/tags/JetBrains/"/>
     
   </entry>
   
