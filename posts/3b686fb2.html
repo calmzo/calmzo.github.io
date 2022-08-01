@@ -80,8 +80,14 @@
 <meta property="og:image" content="https://img.shields.io/github/stars/overtrue/pinyin?style=plastic">
 <meta property="og:image" content="https://img.shields.io/github/watchers/overtrue/pinyin?style=plastic">
 <meta property="og:image" content="https://img.shields.io/github/forks/overtrue/pinyin?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/stars/modood/Administrative-divisions-of-China?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/watchers/modood/Administrative-divisions-of-China?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/forks/modood/Administrative-divisions-of-China?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/stars/florinpop17/app-ideas?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/watchers/florinpop17/app-ideas?style=plastic">
+<meta property="og:image" content="https://img.shields.io/github/forks/florinpop17/app-ideas?style=plastic">
 <meta property="article:published_time" content="2022-07-29T06:15:17.000Z">
-<meta property="article:modified_time" content="2022-07-29T08:13:38.267Z">
+<meta property="article:modified_time" content="2022-08-01T02:09:23.906Z">
 <meta property="article:author" content="Calm">
 <meta property="article:tag" content="github">
 <meta property="article:tag" content="awesome">
@@ -102,6 +108,8 @@
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="漏洞">
 <meta property="article:tag" content="中文转拼音">
+<meta property="article:tag" content="地域">
+<meta property="article:tag" content="开源项目">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img.shields.io/github/stars/dompdf/dompdf?style=plastic">
   
@@ -315,7 +323,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.2k 字
+          6.3k 字
         
       </span>
     
@@ -326,7 +334,7 @@
         
         
         
-          52 分钟
+          53 分钟
         
       </span>
     
@@ -377,7 +385,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：几秒前
+                    本文最后更新于：9 分钟前
                   
                 
               </p>
@@ -462,13 +470,8 @@
 <h2 id="19、pinyin"><a href="#19、pinyin" class="headerlink" title="19、pinyin   "></a>19、<a target="_blank" rel="noopener" href="https://github.com/overtrue/pinyin">pinyin</a> <img src="https://img.shields.io/github/stars/overtrue/pinyin?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/watchers/overtrue/pinyin?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/forks/overtrue/pinyin?style=plastic" srcset="/img/loading.gif" lazyload></h2><p>基于 CC-CEDICT 词典的中文转拼音工具，更准确的支持多音字的汉字转拼音解决方案，示例代码：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">OvertruePinyinPinyin</span>;<br><br><span class="hljs-variable">$pinyin</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Pinyin</span>();<br><br><span class="hljs-variable">$pinyin</span>-&gt;<span class="hljs-title function_ invoke__">convert</span>(<span class="hljs-string">&#x27;带着希望去旅行，比到达终点更美好&#x27;</span>);<br><span class="hljs-comment">// [&quot;dai&quot;, &quot;zhe&quot;, &quot;xi&quot;, &quot;wang&quot;, &quot;qu&quot;, &quot;lv&quot;, &quot;xing&quot;, &quot;bi&quot;, &quot;dao&quot;, &quot;da&quot;, &quot;zhong&quot;, &quot;dian&quot;, &quot;geng&quot;, &quot;mei&quot;, &quot;hao&quot;]</span><br><br><span class="hljs-variable">$pinyin</span>-&gt;<span class="hljs-title function_ invoke__">convert</span>(<span class="hljs-string">&#x27;带着希望去旅行，比到达终点更美好&#x27;</span>, PINYIN_UNICODE);<br><span class="hljs-comment">// [&quot;dài&quot;,&quot;zhe&quot;,&quot;xī&quot;,&quot;wàng&quot;,&quot;qù&quot;,&quot;lǚ&quot;,&quot;xíng&quot;,&quot;bǐ&quot;,&quot;dào&quot;,&quot;dá&quot;,&quot;zhōng&quot;,&quot;diǎn&quot;,&quot;gèng&quot;,&quot;měi&quot;,&quot;hǎo&quot;]</span><br><br><span class="hljs-variable">$pinyin</span>-&gt;<span class="hljs-title function_ invoke__">convert</span>(<span class="hljs-string">&#x27;带着希望去旅行，比到达终点更美好&#x27;</span>, PINYIN_ASCII);<br><span class="hljs-comment">//[&quot;dai4&quot;,&quot;zhe&quot;,&quot;xi1&quot;,&quot;wang4&quot;,&quot;qu4&quot;,&quot;lv3&quot;,&quot;xing2&quot;,&quot;bi3&quot;,&quot;dao4&quot;,&quot;da2&quot;,&quot;zhong1&quot;,&quot;dian3&quot;,&quot;geng4&quot;,&quot;mei3&quot;,&quot;hao3&quot;]</span><br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
+<h2 id="20、Administrative-divisions-of-China"><a href="#20、Administrative-divisions-of-China" class="headerlink" title="20、Administrative-divisions-of-China   "></a>20、<a target="_blank" rel="noopener" href="https://github.com/modood/Administrative-divisions-of-China">Administrative-divisions-of-China</a> <img src="https://img.shields.io/github/stars/modood/Administrative-divisions-of-China?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/watchers/modood/Administrative-divisions-of-China?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/forks/modood/Administrative-divisions-of-China?style=plastic" srcset="/img/loading.gif" lazyload></h2><p>中华人民共和国行政区划（五级）：省级、地级、县级、乡级和村级</p>
+<h2 id="21、Awesome-Github-REPO"><a href="#21、Awesome-Github-REPO" class="headerlink" title="21、Awesome Github REPO   "></a>21、<a target="_blank" rel="noopener" href="https://github.com/florinpop17/app-ideas">Awesome Github REPO</a> <img src="https://img.shields.io/github/stars/florinpop17/app-ideas?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/watchers/florinpop17/app-ideas?style=plastic" srcset="/img/loading.gif" lazyload> <img src="https://img.shields.io/github/forks/florinpop17/app-ideas?style=plastic" srcset="/img/loading.gif" lazyload></h2><p>高质量、有趣的开源项目</p>
 
                 
               </div>
@@ -540,6 +543,10 @@
       
         <a href="/tags/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/">#中文转拼音</a>
       
+        <a href="/tags/%E5%9C%B0%E5%9F%9F/">#地域</a>
+      
+        <a href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">#开源项目</a>
+      
     </div>
   
 </div>
@@ -569,7 +576,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月29日</div>
+          <div>2022年8月1日</div>
         </div>
       
       <div class="license-meta-item">

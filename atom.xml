@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-07-29T08:13:38.267Z</updated>
+  <updated>2022-08-01T02:09:23.906Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://calmchen.com/posts/3b686fb2.html"/>
     <id>https://calmchen.com/posts/3b686fb2.html</id>
     <published>2022-07-29T06:15:17.000Z</published>
-    <updated>2022-07-29T08:13:38.267Z</updated>
+    <updated>2022-08-01T02:09:23.906Z</updated>
     
     
       
@@ -74,6 +74,10 @@
     <category term="漏洞" scheme="https://calmchen.com/tags/%E6%BC%8F%E6%B4%9E/"/>
     
     <category term="中文转拼音" scheme="https://calmchen.com/tags/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
+    
+    <category term="地域" scheme="https://calmchen.com/tags/%E5%9C%B0%E5%9F%9F/"/>
+    
+    <category term="开源项目" scheme="https://calmchen.com/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
