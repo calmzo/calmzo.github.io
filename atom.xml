@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-01T02:09:23.906Z</updated>
+  <updated>2022-08-02T09:01:10.427Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go入门</title>
+    <link href="https://calmchen.com/posts/3e80a85d.html"/>
+    <id>https://calmchen.com/posts/3e80a85d.html</id>
+    <published>2022-08-02T03:02:43.000Z</published>
+    <updated>2022-08-02T09:01:10.427Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Go学习&quot;&gt;&lt;a href=&quot;#Go学习&quot; class=&quot;headerlink&quot; title=&quot;Go学习&quot;&gt;&lt;/a&gt;Go学习&lt;/h1&gt;&lt;h2 id=&quot;1、环境安装&quot;&gt;&lt;a href=&quot;#1、环境安装&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="https://calmchen.com/categories/Go/"/>
+    
+    
+    <category term="go" scheme="https://calmchen.com/tags/go/"/>
+    
+  </entry>
   
   <entry>
     <title>Github开源项目传送门【整理ing】</title>
@@ -105,9 +130,9 @@
     <category term="Java" scheme="https://calmchen.com/categories/Php/Java/"/>
     
     
-    <category term="php" scheme="https://calmchen.com/tags/php/"/>
-    
     <category term="java" scheme="https://calmchen.com/tags/java/"/>
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
     
     <category term="UML" scheme="https://calmchen.com/tags/UML/"/>
     
@@ -575,9 +600,9 @@
     
     <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
     
-    <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
-    
     <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
+    
+    <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
     
   </entry>
   
@@ -611,39 +636,6 @@
   </entry>
   
   <entry>
-    <title>【Phpstorm】常用插件</title>
-    <link href="https://calmchen.com/posts/7d64ac6f.html"/>
-    <id>https://calmchen.com/posts/7d64ac6f.html</id>
-    <published>2022-05-07T08:37:41.000Z</published>
-    <updated>2022-05-07T09:01:26.837Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、CodeGlance-代码地图&quot;&gt;&lt;a href=&quot;#1、CodeGlance-代码地图&quot; class=&quot;headerlink&quot; title=&quot;1、CodeGlance - 代码地图&quot;&gt;&lt;/a&gt;1、CodeGlance -</summary>
-        
-      
-    
-    
-    
-    <category term="phpstorm" scheme="https://calmchen.com/categories/phpstorm/"/>
-    
-    <category term="插件" scheme="https://calmchen.com/categories/phpstorm/%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="PHP" scheme="https://calmchen.com/categories/phpstorm/%E6%8F%92%E4%BB%B6/PHP/"/>
-    
-    
-    <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
-    
-    <category term="phpstorm" scheme="https://calmchen.com/tags/phpstorm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>【Hexo】常用插件</title>
     <link href="https://calmchen.com/posts/468ec796.html"/>
     <id>https://calmchen.com/posts/468ec796.html</id>
@@ -673,19 +665,19 @@
   </entry>
   
   <entry>
-    <title>IDEA常用插件</title>
+    <title>Jetbrains IDE常用插件</title>
     <link href="https://calmchen.com/posts/bc84784b.html"/>
     <id>https://calmchen.com/posts/bc84784b.html</id>
     <published>2022-05-07T05:34:09.000Z</published>
-    <updated>2022-05-07T09:01:26.834Z</updated>
+    <updated>2022-08-02T08:06:55.222Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;blockquote&gt;
-&lt;h2 id=&quot;IntelliJ-idea-必备-好用-优秀-插件&quot;&gt;&lt;a href=&quot;#IntelliJ-idea-必备-好用-优秀-插件&quot; class=&quot;headerlink&quot; title=&quot;IntelliJ idea 必备 好用 优秀</summary>
+    <summary type="html">&lt;h1 id=&quot;Jetbrains-IDE常用插件&quot;&gt;&lt;a href=&quot;#Jetbrains-IDE常用插件&quot; class=&quot;headerlink&quot; title=&quot;Jetbrains IDE常用插件&quot;&gt;&lt;/a&gt;Jetbrains IDE常用插件&lt;/h1&gt;&lt;hr&gt;
+&lt;h2</summary>
         
       
     
@@ -693,16 +685,36 @@
     
     <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/"/>
     
-    <category term="插件" scheme="https://calmchen.com/categories/IDEA/%E6%8F%92%E4%BB%B6/"/>
+    <category term="PHP" scheme="https://calmchen.com/categories/IDEA/PHP/"/>
     
-    <category term="JAVA" scheme="https://calmchen.com/categories/IDEA/%E6%8F%92%E4%BB%B6/JAVA/"/>
+    <category term="Goland" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/"/>
+    
+    <category term="插件" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="JAVA" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/JAVA/"/>
+    
+    <category term="IntelliJ IDEA" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/JAVA/IntelliJ-IDEA/"/>
+    
+    <category term="IDEA" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/JAVA/IntelliJ-IDEA/IDEA/"/>
+    
+    <category term="Phpstorm" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/JAVA/IntelliJ-IDEA/IDEA/Phpstorm/"/>
+    
+    <category term="Go" scheme="https://calmchen.com/categories/IDEA/PHP/Goland/%E6%8F%92%E4%BB%B6/JAVA/IntelliJ-IDEA/IDEA/Phpstorm/Go/"/>
     
     
-    <category term="IDEA" scheme="https://calmchen.com/tags/IDEA/"/>
+    <category term="go" scheme="https://calmchen.com/tags/go/"/>
     
-    <category term="JAVA" scheme="https://calmchen.com/tags/JAVA/"/>
+    <category term="idea" scheme="https://calmchen.com/tags/idea/"/>
     
     <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="java" scheme="https://calmchen.com/tags/java/"/>
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
+    
+    <category term="goland" scheme="https://calmchen.com/tags/goland/"/>
+    
+    <category term="phpstorm" scheme="https://calmchen.com/tags/phpstorm/"/>
     
   </entry>
   
