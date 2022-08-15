@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-12T02:56:27.172Z</updated>
+  <updated>2022-08-15T07:47:58.605Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>秒杀系统</title>
+    <link href="https://calmchen.com/posts/7206c742.html"/>
+    <id>https://calmchen.com/posts/7206c742.html</id>
+    <published>2022-08-12T08:12:17.000Z</published>
+    <updated>2022-08-15T07:47:58.605Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;秒杀系统&quot;&gt;&lt;a href=&quot;#秒杀系统&quot; class=&quot;headerlink&quot; title=&quot;秒杀系统&quot;&gt;&lt;/a&gt;秒杀系统&lt;/h1&gt;&lt;hr&gt;
+&lt;h2 id=&quot;工作流程&quot;&gt;&lt;a href=&quot;#工作流程&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/PHP/"/>
+    
+    <category term="Redis" scheme="https://calmchen.com/categories/PHP/Redis/"/>
+    
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
+    
+    <category term="reids" scheme="https://calmchen.com/tags/reids/"/>
+    
+    <category term="秒杀" scheme="https://calmchen.com/tags/%E7%A7%92%E6%9D%80/"/>
+    
+    <category term="抢购" scheme="https://calmchen.com/tags/%E6%8A%A2%E8%B4%AD/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ios内购续订服务端</title>
     <link href="https://calmchen.com/posts/23b26f62.html"/>
     <id>https://calmchen.com/posts/23b26f62.html</id>
     <published>2022-08-12T02:39:30.000Z</published>
-    <updated>2022-08-12T02:56:27.172Z</updated>
+    <updated>2022-08-12T02:57:38.689Z</updated>
     
     
       
@@ -668,35 +702,6 @@
     <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
     
     <category term="软件" scheme="https://calmchen.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Hexo】常用插件</title>
-    <link href="https://calmchen.com/posts/468ec796.html"/>
-    <id>https://calmchen.com/posts/468ec796.html</id>
-    <published>2022-05-07T05:43:37.000Z</published>
-    <updated>2022-07-14T03:02:13.845Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1、hexo-deployer-git&quot;&gt;&lt;a href=&quot;#1、hexo-deployer-git&quot; class=&quot;headerlink&quot; title=&quot;1、hexo-deployer-git&quot;&gt;&lt;/a&gt;1、hexo-deployer-git&lt;/h2&gt;&lt;p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="https://calmchen.com/categories/Hexo/"/>
-    
-    <category term="插件" scheme="https://calmchen.com/categories/Hexo/%E6%8F%92%E4%BB%B6/"/>
-    
-    
-    <category term="插件" scheme="https://calmchen.com/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="Hexo" scheme="https://calmchen.com/tags/Hexo/"/>
     
   </entry>
   
