@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-15T07:47:58.605Z</updated>
+  <updated>2022-08-15T10:21:26.408Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -17,11 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Laravel使用模型工厂进行数据填充</title>
+    <link href="https://calmchen.com/posts/a11f4b7f.html"/>
+    <id>https://calmchen.com/posts/a11f4b7f.html</id>
+    <published>2022-08-15T08:45:50.000Z</published>
+    <updated>2022-08-15T10:21:26.408Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Laravel使用Faker-模型工厂进行数据填充&quot;&gt;&lt;a href=&quot;#Laravel使用Faker-模型工厂进行数据填充&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/PHP/"/>
+    
+    <category term="Laravel" scheme="https://calmchen.com/categories/PHP/Laravel/"/>
+    
+    <category term="Faker" scheme="https://calmchen.com/categories/PHP/Laravel/Faker/"/>
+    
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
+    
+    <category term="laravel" scheme="https://calmchen.com/tags/laravel/"/>
+    
+    <category term="模型工厂" scheme="https://calmchen.com/tags/%E6%A8%A1%E5%9E%8B%E5%B7%A5%E5%8E%82/"/>
+    
+    <category term="数据填充" scheme="https://calmchen.com/tags/%E6%95%B0%E6%8D%AE%E5%A1%AB%E5%85%85/"/>
+    
+    <category term="faker" scheme="https://calmchen.com/tags/faker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>秒杀系统</title>
     <link href="https://calmchen.com/posts/7206c742.html"/>
     <id>https://calmchen.com/posts/7206c742.html</id>
     <published>2022-08-12T08:12:17.000Z</published>
-    <updated>2022-08-15T07:47:58.605Z</updated>
+    <updated>2022-08-15T07:51:28.853Z</updated>
     
     
       
@@ -673,35 +710,6 @@
     <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
     
     <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【MAC】装机软件</title>
-    <link href="https://calmchen.com/posts/55a24faf.html"/>
-    <id>https://calmchen.com/posts/55a24faf.html</id>
-    <published>2022-05-13T02:31:38.000Z</published>
-    <updated>2022-07-25T03:48:29.818Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;自用Mac装机软件&quot;&gt;&lt;a href=&quot;#自用Mac装机软件&quot; class=&quot;headerlink&quot; title=&quot;自用Mac装机软件&quot;&gt;&lt;/a&gt;自用Mac装机软件&lt;/h1&gt;&lt;h2 id=&quot;1、App-Store直接下载&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Mac" scheme="https://calmchen.com/categories/Mac/"/>
-    
-    <category term="软件" scheme="https://calmchen.com/categories/Mac/%E8%BD%AF%E4%BB%B6/"/>
-    
-    
-    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
-    
-    <category term="软件" scheme="https://calmchen.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   

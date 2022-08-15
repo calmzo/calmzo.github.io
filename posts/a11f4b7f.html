@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Calm">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Laravel使用Faker+模型工厂进行数据填充 配制faker设置config&#x2F;app.php 支持中文 1&amp;#x27;faker_locale&amp;#x27; &#x3D;&gt; &amp;#x27;zh_CN&amp;#x27;  编写Seeders生成一个Seeder生成在database&#x2F;seeds 目录 12php artisan make:seeder UserSeeder  插入语句 12345678910">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Laravel使用模型工厂进行数据填充">
+<meta property="og:url" content="https://calmchen.com/posts/a11f4b7f.html">
+<meta property="og:site_name" content="成小琴快跑">
+<meta property="og:description" content="Laravel使用Faker+模型工厂进行数据填充 配制faker设置config&#x2F;app.php 支持中文 1&amp;#x27;faker_locale&amp;#x27; &#x3D;&gt; &amp;#x27;zh_CN&amp;#x27;  编写Seeders生成一个Seeder生成在database&#x2F;seeds 目录 12php artisan make:seeder UserSeeder  插入语句 12345678910">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-15T08:45:50.000Z">
+<meta property="article:modified_time" content="2022-08-15T10:21:26.408Z">
+<meta property="article:author" content="Calm">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="laravel">
+<meta property="article:tag" content="模型工厂">
+<meta property="article:tag" content="数据填充">
+<meta property="article:tag" content="faker">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Laravel使用模型工厂进行数据填充 - 成小琴快跑</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"calmchen.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"zhM0AOiqle17oPoE84CoYw1e-gzGzoHsz","app_key":"itmzT1JbXfAjVwMqDhGPzU45","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="成小琴快跑" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Calm的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Laravel使用模型工厂进行数据填充"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-15 16:45" pubdate>
+          2022年8月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          108 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Laravel使用模型工厂进行数据填充</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：11 分钟前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Laravel使用Faker-模型工厂进行数据填充"><a href="#Laravel使用Faker-模型工厂进行数据填充" class="headerlink" title="Laravel使用Faker+模型工厂进行数据填充"></a>Laravel使用Faker+模型工厂进行数据填充</h1><hr>
+<h2 id="配制faker"><a href="#配制faker" class="headerlink" title="配制faker"></a>配制faker</h2><p>设置<code>config/app.php</code> 支持中文</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-string">&#x27;faker_locale&#x27;</span> =&gt; <span class="hljs-string">&#x27;zh_CN&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="编写Seeders"><a href="#编写Seeders" class="headerlink" title="编写Seeders"></a>编写Seeders</h2><h3 id="生成一个Seeder"><a href="#生成一个Seeder" class="headerlink" title="生成一个Seeder"></a>生成一个Seeder</h3><p>生成在<code>database/seeds</code> 目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">php artisan make:seeder UserSeeder<br><br></code></pre></td></tr></table></figure>
+
+<p>插入语句</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">Database</span>\<span class="hljs-title class_">Seeders</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Seeder</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">DB</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Hash</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSeeder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Seeder</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Run the database seeds.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> void</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        DB::<span class="hljs-title function_ invoke__">table</span>(<span class="hljs-string">&#x27;users&#x27;</span>)-&gt;<span class="hljs-title function_ invoke__">insert</span>([<br>            <span class="hljs-string">&#x27;name&#x27;</span> =&gt; <span class="hljs-title class_">Str</span>::<span class="hljs-title function_ invoke__">random</span>(<span class="hljs-number">10</span>),<br>            <span class="hljs-string">&#x27;email&#x27;</span> =&gt; <span class="hljs-title class_">Str</span>::<span class="hljs-title function_ invoke__">random</span>(<span class="hljs-number">10</span>).<span class="hljs-string">&#x27;@gmail.com&#x27;</span>,<br>            <span class="hljs-string">&#x27;password&#x27;</span> =&gt; <span class="hljs-title class_">Hash</span>::<span class="hljs-title function_ invoke__">make</span>(<span class="hljs-string">&#x27;password&#x27;</span>),<br>        ]);<br><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="模型工厂手动插入数据"><a href="#模型工厂手动插入数据" class="headerlink" title="模型工厂手动插入数据"></a>模型工厂手动插入数据</h3><h4 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">php artisan make:factory OrderFactory<br><br></code></pre></td></tr></table></figure>
+<p>新工厂在 <code>database/factories</code> 目录中</p>
+<h4 id="写"><a href="#写" class="headerlink" title="写"></a>写</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs php"><br><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">Database</span>\<span class="hljs-title class_">Factories</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">User</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Factories</span>\<span class="hljs-title">Factory</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Str</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserFactory</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Factory</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * The name of the factory&#x27;s corresponding model.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@var</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$model</span> = <span class="hljs-title class_">User</span>::<span class="hljs-variable language_">class</span>;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Define the model&#x27;s default state.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> array</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">definition</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> [<br>            <span class="hljs-string">&#x27;name&#x27;</span> =&gt; <span class="hljs-variable language_">$this</span>-&gt;faker-&gt;<span class="hljs-title function_ invoke__">name</span>(),<br>            <span class="hljs-string">&#x27;email&#x27;</span> =&gt; <span class="hljs-variable language_">$this</span>-&gt;faker-&gt;<span class="hljs-title function_ invoke__">unique</span>()-&gt;<span class="hljs-title function_ invoke__">safeEmail</span>(),<br>            <span class="hljs-string">&#x27;email_verified_at&#x27;</span> =&gt; <span class="hljs-title function_ invoke__">now</span>(),<br>            <span class="hljs-string">&#x27;password&#x27;</span> =&gt; <span class="hljs-string">&#x27;$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi&#x27;</span>, <span class="hljs-comment">// password</span><br>            <span class="hljs-string">&#x27;remember_token&#x27;</span> =&gt; <span class="hljs-title class_">Str</span>::<span class="hljs-title function_ invoke__">random</span>(<span class="hljs-number">10</span>),<br>        ];<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Indicate that the model&#x27;s email address should be unverified.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> \Illuminate\Database\Eloquent\Factories\Factory</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unverified</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">state</span>(function (<span class="hljs-keyword">array</span> <span class="hljs-variable">$attributes</span>) &#123;<br>            <span class="hljs-keyword">return</span> [<br>                <span class="hljs-string">&#x27;email_verified_at&#x27;</span> =&gt; <span class="hljs-literal">null</span>,<br>            ];<br>        &#125;);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="调用模型工厂"><a href="#调用模型工厂" class="headerlink" title="调用模型工厂"></a>调用模型工厂</h3><p>创建10个订单信息：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">Database</span>\<span class="hljs-title class_">Seeders</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Models</span>\<span class="hljs-title">Order</span>\<span class="hljs-title">Order</span>;<br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Seeder</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSeeder</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Seeder</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Run the database seeds.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> void</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-title class_">Order</span>::<span class="hljs-title function_ invoke__">factory</span>()-&gt;<span class="hljs-title function_ invoke__">times</span>(<span class="hljs-number">10</span>)-&gt;<span class="hljs-title function_ invoke__">create</span>();<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="调用其它-Seeders"><a href="#调用其它-Seeders" class="headerlink" title="调用其它 Seeders"></a>调用其它 Seeders</h3><p><code>DatabaseSeeder</code> 使用 <code>call</code> 方法可以将数据填充拆分成多个文件，这样就不会使单个 <code>seeder</code> 变得非常大。只需简单传递要运行的 <code>seeder</code> 类名称即可</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 执行数据库填充</span><br><span class="hljs-comment"> *</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@return</span> void</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-variable language_">$this</span>-&gt;<span class="hljs-title function_ invoke__">call</span>([<br>        <span class="hljs-title class_">UserSeeder</span>::<span class="hljs-variable language_">class</span>,<br>        <span class="hljs-title class_">PostSeeder</span>::<span class="hljs-variable language_">class</span>,<br>        <span class="hljs-title class_">CommentSeeder</span>::<span class="hljs-variable language_">class</span>,<br>    ]);<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="运行seeder"><a href="#运行seeder" class="headerlink" title="运行seeder"></a>运行seeder</h3><p><code>db:seed</code> 命令将运行 <code>DatabaseSeeder</code> 类<br><code>--class</code> 选项来指定一个特定的 <code>seeder</code> 类</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">php artisan db:seed<br>php artisan db:seed --class=UserSeeder <br></code></pre></td></tr></table></figure>
+
+<h3 id="faker基本用法"><a href="#faker基本用法" class="headerlink" title="faker基本用法"></a>faker基本用法</h3><h4 id="Faker-Provider-Base-基本"><a href="#Faker-Provider-Base-基本" class="headerlink" title="Faker\Provider\Base 基本"></a>Faker\Provider\Base 基本</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$randomDigit</span> = <span class="hljs-variable">$faker</span>-&gt;randomDigit;<span class="hljs-comment">//生成0-9之间的随机数</span><br><span class="hljs-variable">$randomDigitNotNull</span> = <span class="hljs-variable">$faker</span>-&gt;randomDigitNotNull;<span class="hljs-comment">//生成1-9之间的随机数</span><br><span class="hljs-variable">$randomNumber</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">randomNumber</span>(<span class="hljs-number">5</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//生成5位整数，true表示严格模式，即只能5位</span><br><span class="hljs-variable">$randomFloat</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">randomFloat</span>(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>);<span class="hljs-comment">//生成浮点数，两位小数点，范围是0-10之间</span><br><span class="hljs-variable">$numberBetween</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">numberBetween</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>);<span class="hljs-comment">//生成随机整数，范围是0-100之间</span><br><span class="hljs-variable">$randomLetter</span> = <span class="hljs-variable">$faker</span>-&gt;randomLetter;<span class="hljs-comment">//返回a-z之间任意的一个小写字符</span><br><span class="hljs-variable">$randomElements</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">randomElements</span>([<span class="hljs-string">&#x27;a&#x27;</span>, <span class="hljs-string">&#x27;b&#x27;</span>, <span class="hljs-string">&#x27;c&#x27;</span>, <span class="hljs-string">&#x27;d&#x27;</span>], <span class="hljs-number">2</span>);<span class="hljs-comment">//返回数组中的随机两个元素</span><br><span class="hljs-variable">$randomElement</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">randomElement</span>([<span class="hljs-string">&#x27;aa&#x27;</span>, <span class="hljs-string">&#x27;bb&#x27;</span>, <span class="hljs-string">&#x27;cc&#x27;</span>, <span class="hljs-string">&#x27;dd&#x27;</span>]);<span class="hljs-comment">//随机返回数组中的一个元素</span><br><span class="hljs-variable">$suffle</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">shuffle</span>(<span class="hljs-string">&#x27;hello, world&#x27;</span>); <span class="hljs-comment">//将字串中的字符打乱返回</span><br><span class="hljs-variable">$suffle</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">shuffle</span>([<span class="hljs-string">&#x27;aa&#x27;</span>, <span class="hljs-string">&#x27;bb&#x27;</span>, <span class="hljs-string">&#x27;cc&#x27;</span>, <span class="hljs-string">&#x27;dd&#x27;</span>]); <span class="hljs-comment">//将数组中的元素打乱返回</span><br><span class="hljs-variable">$numerify</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">numerify</span>(<span class="hljs-string">&#x27;Hello #####&#x27;</span>);<span class="hljs-comment">//#####替换为随机数字，输出类似：Hello 03501</span><br><span class="hljs-variable">$lexify</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">lexify</span>(<span class="hljs-string">&#x27;Hello ???&#x27;</span>);<span class="hljs-comment">//???替换为3个随机小写字符，输出类似：Hello krg</span><br><span class="hljs-variable">$bothify</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">bothify</span>(<span class="hljs-string">&#x27;hello ##??&#x27;</span>);<span class="hljs-comment">//#替换为随机数字,?替换为随机小写字符.输出类似：hello 15cr</span><br><span class="hljs-variable">$asciify</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">asciify</span>(<span class="hljs-string">&#x27;hello *****&#x27;</span>);<span class="hljs-comment">//*替换为随机字符，输出类似：hello 5Ynt[</span><br><span class="hljs-variable">$regexify</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">regexify</span>(<span class="hljs-string">&#x27;[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]&#123;2,4&#125;&#x27;</span>);<span class="hljs-comment">//根据正则表达式返回字串</span><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Lorem-文本"><a href="#Faker-Provider-Lorem-文本" class="headerlink" title="Faker\Provider\Lorem 文本"></a>Faker\Provider\Lorem 文本</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$word</span> = <span class="hljs-variable">$faker</span>-&gt;word;<span class="hljs-comment">//返回一个单词</span><br><span class="hljs-variable">$words</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">words</span>(<span class="hljs-number">3</span>, <span class="hljs-literal">false</span>);<span class="hljs-comment">//返回3个单词，false表示返回一个数组；true表示返回一个字符串，单词之间用空格分开</span><br><span class="hljs-variable">$sentence</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">sentence</span>(<span class="hljs-number">5</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//返回一个句子，false表示只能含有5个单词，true表示可以在5个单词左右</span><br><span class="hljs-variable">$sentences</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">sentences</span>(<span class="hljs-number">3</span>, <span class="hljs-literal">false</span>);<span class="hljs-comment">//返回3条句子，false表示返回一个数组，true表示将三条句子拼成一条返回</span><br><span class="hljs-variable">$paragraph</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">paragraph</span>(<span class="hljs-number">3</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//返回一个段落，由3条句子组成。false表示只能有3条句子，true表示可以在3条句子左右</span><br><span class="hljs-variable">$paragraphs</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">paragraphs</span>(<span class="hljs-number">4</span>, <span class="hljs-literal">false</span>);<span class="hljs-comment">//返回4个段落。false表示返回一个数组，true表示将段落拼接在一起，并且用换行符分割</span><br><span class="hljs-variable">$text</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">text</span>(<span class="hljs-number">200</span>);<span class="hljs-comment">//返回一段文本，最多只能含有200个字符</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-en-US-Person-人物"><a href="#Faker-Provider-en-US-Person-人物" class="headerlink" title="Faker\Provider\en_US\Person 人物"></a>Faker\Provider\en_US\Person 人物</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$title</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">title</span>(<span class="hljs-string">&#x27;female&#x27;</span>);<span class="hljs-comment">//参数：title($gender = null|&#x27;male&#x27;|&#x27;female&#x27;) .返回称呼。例如：Mrs.|Prof.|Dr.</span><br><span class="hljs-variable">$titleMale</span> = <span class="hljs-variable">$faker</span>-&gt;titleMale;<span class="hljs-comment">//返回男性称呼</span><br><span class="hljs-variable">$titleFemale</span> = <span class="hljs-variable">$faker</span>-&gt;titleFemale;<span class="hljs-comment">//返回女性称呼</span><br><span class="hljs-variable">$name</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">name</span>(<span class="hljs-string">&#x27;female&#x27;</span>);<span class="hljs-comment">//参数：name($gender = null|&#x27;male&#x27;|&#x27;female&#x27;) .返回姓名</span><br><span class="hljs-variable">$firstName</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">firstName</span>(<span class="hljs-string">&#x27;female&#x27;</span>);<span class="hljs-comment">//参数：firstName($gender = null|&#x27;male&#x27;|&#x27;female&#x27;) .返回名</span><br><span class="hljs-variable">$firstNameMale</span> = <span class="hljs-variable">$faker</span>-&gt;firstNameMale;<span class="hljs-comment">//男性名字</span><br><span class="hljs-variable">$firstNameFemale</span> = <span class="hljs-variable">$faker</span>-&gt;firstNameFemale;<span class="hljs-comment">//女性名字</span><br><span class="hljs-variable">$lastName</span> = <span class="hljs-variable">$faker</span>-&gt;lastName;<span class="hljs-comment">//姓</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-en-US-Address-地址"><a href="#Faker-Provider-en-US-Address-地址" class="headerlink" title="Faker\Provider\en_US\Address 地址"></a>Faker\Provider\en_US\Address 地址</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$cityPrefix</span> = <span class="hljs-variable">$faker</span>-&gt;cityPrefix;<span class="hljs-comment">//城市前缀.如：Lake</span><br><span class="hljs-variable">$secondaryAddress</span> = <span class="hljs-variable">$faker</span>-&gt;secondaryAddress;<span class="hljs-comment">//二级地址.如：Suite 061</span><br><span class="hljs-variable">$state</span> = <span class="hljs-variable">$faker</span>-&gt;state;<span class="hljs-comment">//州、省（如：Colorado、四川省）</span><br><span class="hljs-variable">$stateAbbr</span> = <span class="hljs-variable">$faker</span>-&gt;stateAbbr;<span class="hljs-comment">//省份简称.如：晋、蒙、浙、冀</span><br><span class="hljs-variable">$citySuffix</span> = <span class="hljs-variable">$faker</span>-&gt;citySuffix;<span class="hljs-comment">//城市后缀.如：side、land、port、Ville</span><br><span class="hljs-variable">$streetSuffix</span> = <span class="hljs-variable">$faker</span>-&gt;streetSuffix;<span class="hljs-comment">//街道后缀.如：Ramp、Plains</span><br><span class="hljs-variable">$buildingNumber</span> = <span class="hljs-variable">$faker</span>-&gt;buildingNumber;<span class="hljs-comment">//建筑物编号</span><br><span class="hljs-variable">$city</span> = <span class="hljs-variable">$faker</span>-&gt;city;<span class="hljs-comment">//城市</span><br><span class="hljs-variable">$streetName</span> = <span class="hljs-variable">$faker</span>-&gt;streetName;<span class="hljs-comment">//街道名称</span><br><span class="hljs-variable">$streetAddress</span> = <span class="hljs-variable">$faker</span>-&gt;streetAddress;<span class="hljs-comment">//街道地址</span><br><span class="hljs-variable">$postcode</span> = <span class="hljs-variable">$faker</span>-&gt;postcode;<span class="hljs-comment">//邮政编码</span><br><span class="hljs-variable">$address</span> = <span class="hljs-variable">$faker</span>-&gt;address;<span class="hljs-comment">//地址（城市+区）</span><br><span class="hljs-variable">$country</span> = <span class="hljs-variable">$faker</span>-&gt;country;<span class="hljs-comment">//国家</span><br><span class="hljs-variable">$latitude</span> = <span class="hljs-variable">$faker</span>-&gt;latitude;<span class="hljs-comment">//纬度 latitude($min = -90, $max = 90)</span><br><span class="hljs-variable">$longitude</span> = <span class="hljs-variable">$faker</span>-&gt;longitude;<span class="hljs-comment">//经度 longitude($min = -180, $max = 180)</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-en-US-PhoneNumber-电话号码"><a href="#Faker-Provider-en-US-PhoneNumber-电话号码" class="headerlink" title="Faker\Provider\en_US\PhoneNumber 电话号码"></a>Faker\Provider\en_US\PhoneNumber 电话号码</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$phoneNumber</span> = <span class="hljs-variable">$faker</span>-&gt;phoneNumber;<span class="hljs-comment">//手机号码</span><br><span class="hljs-variable">$tollFreePhoneNumber</span> = <span class="hljs-variable">$faker</span>-&gt;tollFreePhoneNumber;<br><span class="hljs-variable">$e164PhoneNumber</span> = <span class="hljs-variable">$faker</span>-&gt;e164PhoneNumber;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-en-US-Company-公司"><a href="#Faker-Provider-en-US-Company-公司" class="headerlink" title="Faker\Provider\en_US\Company 公司"></a>Faker\Provider\en_US\Company 公司</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$catchPhrase</span> = <span class="hljs-variable">$faker</span>-&gt;catchPhrase;<span class="hljs-comment">//口号</span><br><span class="hljs-variable">$bs</span> = <span class="hljs-variable">$faker</span>-&gt;bs;<br><span class="hljs-variable">$company</span> = <span class="hljs-variable">$faker</span>-&gt;company;<span class="hljs-comment">//公司名称</span><br><span class="hljs-variable">$companySuffix</span> = <span class="hljs-variable">$faker</span>-&gt;companySuffix;<span class="hljs-comment">//公司名称后缀</span><br><span class="hljs-variable">$jobTitle</span> = <span class="hljs-variable">$faker</span>-&gt;jobTitle;<span class="hljs-comment">//职称</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-en-US-Text-文本"><a href="#Faker-Provider-en-US-Text-文本" class="headerlink" title="Faker\Provider\en_US\Text 文本"></a>Faker\Provider\en_US\Text 文本</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$realText</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">realText</span>();<span class="hljs-comment">//一段叙事文本</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-DateTime-日期时间"><a href="#Faker-Provider-DateTime-日期时间" class="headerlink" title="Faker\Provider\DateTime 日期时间"></a>Faker\Provider\DateTime 日期时间</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$unixTime</span> = <span class="hljs-variable">$faker</span>-&gt;unixTime;<span class="hljs-comment">//返回随机时间戳</span><br><span class="hljs-variable">$unixTime</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">unixTime</span>(<span class="hljs-string">&#x27;now&#x27;</span>);<span class="hljs-comment">//返回随机时间戳 可选最后截止时间</span><br><span class="hljs-variable">$dateTime</span> = <span class="hljs-variable">$faker</span>-&gt;dateTime;<span class="hljs-comment">//返回一个随机的DateTime对象</span><br><span class="hljs-variable">$dateTime</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTime</span>(<span class="hljs-string">&#x27;now&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个随机的DateTime对象，可选择最后截止时间和时区</span><br><span class="hljs-variable">$dateTimeAD</span> = <span class="hljs-variable">$faker</span>-&gt;dateTimeAD;<span class="hljs-comment">//返回一个随机的DateTime对象</span><br><span class="hljs-variable">$dateTimeAD</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeAD</span>(<span class="hljs-string">&#x27;now&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个随机的DateTime对象，可选择最后截止时间和时区</span><br><span class="hljs-variable">$iso8601</span> = <span class="hljs-variable">$faker</span>-&gt;iso8601;<span class="hljs-comment">//返回一个随机的字符串形式的时间</span><br><span class="hljs-variable">$iso8601</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">iso8601</span>(<span class="hljs-string">&#x27;now&#x27;</span>);<span class="hljs-comment">//返回一个随机的字符串形式的时间,可选择最后截止时间</span><br><span class="hljs-variable">$date</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">date</span>(<span class="hljs-string">&quot;Y-m-d H:i:s&quot;</span>, <span class="hljs-string">&#x27;now&#x27;</span>);<span class="hljs-comment">//指定格式返回时间,可选择最后截止时间</span><br><span class="hljs-variable">$time</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">time</span>(<span class="hljs-string">&#x27;Y-m-d H:i:s&#x27;</span>, <span class="hljs-string">&#x27;now&#x27;</span>);<span class="hljs-comment">//(同上)指定格式返回时间,可选择最后截止时间</span><br><span class="hljs-variable">$dateTimeBetween</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeBetween</span>(<span class="hljs-string">&#x27;2019-01-01&#x27;</span>, <span class="hljs-string">&#x27;now&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回指定时间区间的DateTime对象，可选时区</span><br><span class="hljs-variable">$dateTimeInInterval</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeInInterval</span>(<span class="hljs-string">&#x27;-5 years&#x27;</span>, <span class="hljs-string">&#x27;+5 days&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回指定时间区间的DateTime对象，可选时区(第一个参数：开始时间，第二个参数：时间范围)</span><br><span class="hljs-variable">$dateTimeThisCentury</span> = <span class="hljs-variable">$faker</span>-&gt;dateTimeThisCentury;<span class="hljs-comment">//返回一个本世纪内的DateTime对象</span><br><span class="hljs-variable">$dateTimeThisCentury</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeThisCentury</span>(<span class="hljs-string">&#x27;1950-01-01&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个本世纪内的DateTime对象.指定截止时间和时区</span><br><span class="hljs-variable">$dateTimeThisDecade</span> = <span class="hljs-variable">$faker</span>-&gt;dateTimeThisDecade;<span class="hljs-comment">//返回一个前十年内的DateTime对象</span><br><span class="hljs-variable">$dateTimeThisDecade</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeThisDecade</span>(<span class="hljs-string">&#x27;2015-01-01&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个前十年内的DateTime对象.指定允许的最后时间和时区</span><br><span class="hljs-variable">$dateTimeThisYear</span> = <span class="hljs-variable">$faker</span>-&gt;dateTimeThisYear;<span class="hljs-comment">//返回一个前一年内的DateTime对象</span><br><span class="hljs-variable">$dateTimeThisYear</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeThisYear</span>(<span class="hljs-string">&#x27;now&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个前一年内的DateTime对象.指定允许的最后时间和时区</span><br><span class="hljs-variable">$dateTimeThisMonth</span> = <span class="hljs-variable">$faker</span>-&gt;dateTimeThisMonth;<span class="hljs-comment">//返回一个前一个月内的DateTime对象</span><br><span class="hljs-variable">$dateTimeThisMonth</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">dateTimeThisMonth</span>(<span class="hljs-string">&#x27;-15 days&#x27;</span>, <span class="hljs-string">&#x27;PRC&#x27;</span>);<span class="hljs-comment">//返回一个前一个月内的DateTime对象.指定允许的最后时间和时区</span><br><span class="hljs-variable">$amPm</span> = <span class="hljs-variable">$faker</span>-&gt;amPm;<span class="hljs-comment">//上午/下午</span><br><span class="hljs-variable">$dayOfMonth</span> = <span class="hljs-variable">$faker</span>-&gt;dayOfMonth;<span class="hljs-comment">//返回几号</span><br><span class="hljs-variable">$dayOfWeek</span> = <span class="hljs-variable">$faker</span>-&gt;dayOfWeek;<span class="hljs-comment">//返回星期几</span><br><span class="hljs-variable">$month</span> = <span class="hljs-variable">$faker</span>-&gt;month;<span class="hljs-comment">//返回月份</span><br><span class="hljs-variable">$monthName</span> = <span class="hljs-variable">$faker</span>-&gt;monthName;<span class="hljs-comment">//返回月份名称</span><br><span class="hljs-variable">$year</span> = <span class="hljs-variable">$faker</span>-&gt;year;<span class="hljs-comment">//返回年份</span><br><span class="hljs-variable">$year</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">year</span>(<span class="hljs-string">&#x27;2000-01-01&#x27;</span>);<span class="hljs-comment">//返回年份.可指定最后截止日期</span><br><span class="hljs-variable">$timezone</span> = <span class="hljs-variable">$faker</span>-&gt;timezone;<span class="hljs-comment">//返回时区</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-Internet-互联网"><a href="#Faker-Provider-Internet-互联网" class="headerlink" title="Faker\Provider\Internet 互联网"></a>Faker\Provider\Internet 互联网</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$email</span> = <span class="hljs-variable">$faker</span>-&gt;email;<span class="hljs-comment">//返回一个随机邮箱</span><br><span class="hljs-variable">$safeEmail</span> = <span class="hljs-variable">$faker</span>-&gt;safeEmail;<span class="hljs-comment">//返回一个以@example.com结尾的安全邮箱</span><br><span class="hljs-variable">$freeEmail</span> = <span class="hljs-variable">$faker</span>-&gt;freeEmail;<span class="hljs-comment">//返回一个随机邮箱</span><br><span class="hljs-variable">$companyEmail</span> = <span class="hljs-variable">$faker</span>-&gt;companyEmail;<span class="hljs-comment">//返回企业邮箱（中文语言包下不可用）</span><br><span class="hljs-variable">$freeEmailDomain</span> = <span class="hljs-variable">$faker</span>-&gt;freeEmailDomain;<span class="hljs-comment">//返回一个邮件域名</span><br><span class="hljs-variable">$safeEmailDomain</span> = <span class="hljs-variable">$faker</span>-&gt;safeEmailDomain;<span class="hljs-comment">//返回安全的邮件域名</span><br><span class="hljs-variable">$userName</span> = <span class="hljs-variable">$faker</span>-&gt;userName;<span class="hljs-comment">//用户名</span><br><span class="hljs-variable">$password</span> = <span class="hljs-variable">$faker</span>-&gt;password;<span class="hljs-comment">//密码</span><br><span class="hljs-variable">$domainName</span> = <span class="hljs-variable">$faker</span>-&gt;domainName;<span class="hljs-comment">//域名（中文语言包下不可用）</span><br><span class="hljs-variable">$domainWord</span> = <span class="hljs-variable">$faker</span>-&gt;domainWord;<span class="hljs-comment">//不带后缀的域名（中文语言包下不可用）</span><br><span class="hljs-variable">$tld</span> = <span class="hljs-variable">$faker</span>-&gt;tld;<span class="hljs-comment">//域名后缀：如com、org（中文语言包下不可用）</span><br><span class="hljs-variable">$url</span> = <span class="hljs-variable">$faker</span>-&gt;url;<span class="hljs-comment">//返回一个随机url（中文语言包下不可用）</span><br><span class="hljs-variable">$slug</span> = <span class="hljs-variable">$faker</span>-&gt;slug;<br><span class="hljs-variable">$ipv4</span> = <span class="hljs-variable">$faker</span>-&gt;ipv4;<span class="hljs-comment">//返回一个ipv4地址</span><br><span class="hljs-variable">$ipv6</span> = <span class="hljs-variable">$faker</span>-&gt;ipv6;<span class="hljs-comment">//返回一个ipv6地址</span><br><span class="hljs-variable">$localIpv4</span> = <span class="hljs-variable">$faker</span>-&gt;localIpv4;<br><span class="hljs-variable">$macAddress</span> = <span class="hljs-variable">$faker</span>-&gt;macAddress;<span class="hljs-comment">//mac地址</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-UserAgent-用户代理"><a href="#Faker-Provider-UserAgent-用户代理" class="headerlink" title="Faker\Provider\UserAgent 用户代理"></a>Faker\Provider\UserAgent 用户代理</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php">    <span class="hljs-variable">$userAgent</span> = <span class="hljs-variable">$faker</span>-&gt;userAgent;<span class="hljs-comment">//返回一个随机的用户代理信息</span><br><span class="hljs-variable">$chrome</span> = <span class="hljs-variable">$faker</span>-&gt;chrome;<span class="hljs-comment">//返回一个chrome浏览器的用户代理信息</span><br><span class="hljs-variable">$firefox</span> = <span class="hljs-variable">$faker</span>-&gt;firefox;<span class="hljs-comment">//返回一个firefox浏览器的用户代理信息</span><br><span class="hljs-variable">$safari</span> = <span class="hljs-variable">$faker</span>-&gt;safari;<span class="hljs-comment">//返回一个safari浏览器的用户代理信息</span><br><span class="hljs-variable">$opera</span> = <span class="hljs-variable">$faker</span>-&gt;opera;<span class="hljs-comment">//返回一个opera浏览器的用户代理信息</span><br><span class="hljs-variable">$internetExplorer</span> = <span class="hljs-variable">$faker</span>-&gt;internetExplorer;<span class="hljs-comment">//返回一个internetExplorer浏览器的用户代理信息</span><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Payment-支付"><a href="#Faker-Provider-Payment-支付" class="headerlink" title="Faker\Provider\Payment 支付"></a>Faker\Provider\Payment 支付</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$creditCardType</span> = <span class="hljs-variable">$faker</span>-&gt;creditCardType;<span class="hljs-comment">//信用卡类型</span><br><span class="hljs-variable">$creditCardNumber</span> = <span class="hljs-variable">$faker</span>-&gt;creditCardNumber;<span class="hljs-comment">//信用卡号</span><br><span class="hljs-variable">$creditCardExpirationDate</span> = <span class="hljs-variable">$faker</span>-&gt;creditCardExpirationDate;<span class="hljs-comment">//信用卡到期日 (DateTime对象)</span><br><span class="hljs-variable">$creditCardExpirationDateString</span> = <span class="hljs-variable">$faker</span>-&gt;creditCardExpirationDateString;<span class="hljs-comment">//信用卡到期日期字符串</span><br><span class="hljs-variable">$creditCardDetails</span> = <span class="hljs-variable">$faker</span>-&gt;creditCardDetails;<span class="hljs-comment">//信用卡详情（数组）</span><br><span class="hljs-variable">$swiftBicNumber</span> = <span class="hljs-variable">$faker</span>-&gt;swiftBicNumber;<br><span class="hljs-variable">$iban</span> = <span class="hljs-variable">$faker</span>-&gt;iban;<span class="hljs-comment">//国际银行账户</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-Color-颜色"><a href="#Faker-Provider-Color-颜色" class="headerlink" title="Faker\Provider\Color 颜色"></a>Faker\Provider\Color 颜色</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$hexcolor</span> = <span class="hljs-variable">$faker</span>-&gt;hexcolor;<span class="hljs-comment">//十六进制的随机色：&#x27;#fa3cc2&#x27;</span><br><span class="hljs-variable">$rgbcolor</span> = <span class="hljs-variable">$faker</span>-&gt;rgbcolor;<span class="hljs-comment">//RGB格式的随机色（字串形式）：&#x27;0,255,122&#x27;</span><br><span class="hljs-variable">$rgbColorAsArray</span> = <span class="hljs-variable">$faker</span>-&gt;rgbColorAsArray;<span class="hljs-comment">//RGB格式的随机色（数组形式）：array(0,255,122)</span><br><span class="hljs-variable">$rgbCssColor</span> = <span class="hljs-variable">$faker</span>-&gt;rgbCssColor;<span class="hljs-comment">//RGB格式的随机色的css表示：&#x27;rgb(0,255,122)&#x27;</span><br><span class="hljs-variable">$safeColorName</span> = <span class="hljs-variable">$faker</span>-&gt;safeColorName;<span class="hljs-comment">//一个安全的随机色名称</span><br><span class="hljs-variable">$colorName</span> = <span class="hljs-variable">$faker</span>-&gt;colorName;<span class="hljs-comment">//随机色名称</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-File-文件"><a href="#Faker-Provider-File-文件" class="headerlink" title="Faker\Provider\File 文件"></a>Faker\Provider\File 文件</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$fileExtension</span> = <span class="hljs-variable">$faker</span>-&gt;fileExtension;<span class="hljs-comment">//文件后缀</span><br><span class="hljs-variable">$mimeType</span> = <span class="hljs-variable">$faker</span>-&gt;mimeType;<span class="hljs-comment">//mime类型</span><br><span class="hljs-comment">// 将一个随机文件从源文件复制到目标目录，并返回fullpath</span><br><span class="hljs-variable">$file</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">file</span>(<span class="hljs-variable">$sourceDir</span> = <span class="hljs-string">&#x27;./up1&#x27;</span>, <span class="hljs-variable">$targetDir</span> = <span class="hljs-string">&#x27;./up2&#x27;</span>);<br><span class="hljs-comment">// 将一个随机文件从源文件复制到目标目录，并返回basename</span><br><span class="hljs-variable">$file</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">file</span>(<span class="hljs-variable">$sourceDir</span> = <span class="hljs-string">&#x27;./up1&#x27;</span>, <span class="hljs-variable">$targetDir</span> = <span class="hljs-string">&#x27;./up2&#x27;</span>, <span class="hljs-literal">false</span>);<br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Image-图片"><a href="#Faker-Provider-Image-图片" class="headerlink" title="Faker\Provider\Image 图片"></a>Faker\Provider\Image 图片</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$imageUrl</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">imageUrl</span>();<span class="hljs-comment">//https://lorempixel.com/640/480/?93028</span><br><span class="hljs-variable">$imageUrl</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">imageUrl</span>(<span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>);<span class="hljs-comment">//https://lorempixel.com/320/320/cats/?68416</span><br><span class="hljs-variable">$imageUrl</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">imageUrl</span>(<span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;Faker&#x27;</span>);<span class="hljs-comment">//https://lorempixel.com/320/320/cats/Faker/?68118</span><br><span class="hljs-variable">$imageUrl</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">imageUrl</span>(<span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;Faker&#x27;</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//https://lorempixel.com/gray/320/320/cats/Faker/?28732</span><br><span class="hljs-comment">//生成图片并保存到本地 &#x27;/tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#x27;</span><br><span class="hljs-variable">$image</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">image</span>(<span class="hljs-string">&#x27;./tmp&#x27;</span>, <span class="hljs-number">320</span>, <span class="hljs-number">320</span>);<br><span class="hljs-comment">//设置类别并生成图片保存到本地  &#x27;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#x27;</span><br><span class="hljs-variable">$image</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">image</span>(<span class="hljs-string">&#x27;./tmp&#x27;</span>, <span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>);<br><span class="hljs-comment">//设置类别并生成图片保存到本地，只返回文件名 &#x27;13b73edae8443990be1aa8f1a483bc27.jpg&#x27;</span><br><span class="hljs-variable">$image</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">image</span>(<span class="hljs-string">&#x27;./tmp&#x27;</span>, <span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>, <span class="hljs-literal">false</span>);<br><span class="hljs-comment">// 生成没有随机化的图像</span><br><span class="hljs-variable">$image</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">image</span>(<span class="hljs-string">&#x27;./tmp&#x27;</span>, <span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">false</span>);<br><span class="hljs-comment">//生成图片并加上水印字体  &#x27;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&#x27;</span><br><span class="hljs-variable">$image</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">image</span>(<span class="hljs-string">&#x27;./tmp&#x27;</span>, <span class="hljs-number">320</span>, <span class="hljs-number">320</span>, <span class="hljs-string">&#x27;cats&#x27;</span>, <span class="hljs-literal">true</span>, <span class="hljs-literal">true</span>, <span class="hljs-string">&#x27;Faker&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-Uuid-UUID"><a href="#Faker-Provider-Uuid-UUID" class="headerlink" title="Faker\Provider\Uuid UUID"></a>Faker\Provider\Uuid UUID</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$uuid</span> = <span class="hljs-variable">$faker</span>-&gt;uuid;<span class="hljs-comment">//生成一个uuid</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Barcode-条形码"><a href="#Faker-Provider-Barcode-条形码" class="headerlink" title="Faker\Provider\Barcode 条形码"></a>Faker\Provider\Barcode 条形码</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$ean13</span> = <span class="hljs-variable">$faker</span>-&gt;ean13;<span class="hljs-comment">//8105964964473</span><br><span class="hljs-variable">$ean8</span> = <span class="hljs-variable">$faker</span>-&gt;ean8;<span class="hljs-comment">//05994441</span><br><span class="hljs-variable">$isbn13</span> = <span class="hljs-variable">$faker</span>-&gt;isbn13;<span class="hljs-comment">//9780971408739</span><br><span class="hljs-variable">$isbn10</span> = <span class="hljs-variable">$faker</span>-&gt;isbn10;<span class="hljs-comment">//0813387299</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Miscellaneous-各种各样的"><a href="#Faker-Provider-Miscellaneous-各种各样的" class="headerlink" title="Faker\Provider\Miscellaneous 各种各样的"></a>Faker\Provider\Miscellaneous 各种各样的</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-variable">$boolean</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-keyword">boolean</span>;<span class="hljs-comment">//生成一个布尔值</span><br><span class="hljs-variable">$md5</span> = <span class="hljs-variable">$faker</span>-&gt;md5;<span class="hljs-comment">//生成一个md5码</span><br><span class="hljs-variable">$sha1</span> = <span class="hljs-variable">$faker</span>-&gt;sha1;<span class="hljs-comment">//生成一个sha1</span><br><span class="hljs-variable">$sha256</span> = <span class="hljs-variable">$faker</span>-&gt;sha256;<span class="hljs-comment">//生成一个sha256</span><br><span class="hljs-variable">$locale</span> = <span class="hljs-variable">$faker</span>-&gt;locale;<span class="hljs-comment">//生成一个地区编码：如zh_CN</span><br><span class="hljs-variable">$countryCode</span> = <span class="hljs-variable">$faker</span>-&gt;countryCode;<span class="hljs-comment">//生成一个国家编码。如：UK</span><br><span class="hljs-variable">$languageCode</span> = <span class="hljs-variable">$faker</span>-&gt;languageCode;<span class="hljs-comment">//生成一个语言编码.如：en</span><br><span class="hljs-variable">$currencyCode</span> = <span class="hljs-variable">$faker</span>-&gt;currencyCode;<span class="hljs-comment">//生成一个货币代码.如：EUR</span><br><span class="hljs-variable">$emoji</span> = <span class="hljs-variable">$faker</span>-&gt;emoji;<span class="hljs-comment">//生成一个emoji表情</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-Biased-偏向的"><a href="#Faker-Provider-Biased-偏向的" class="headerlink" title="Faker\Provider\Biased 偏向的"></a>Faker\Provider\Biased 偏向的</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//得到10到20之间的随机数，并且更多机会接近20</span><br><span class="hljs-variable">$biasedNumberBetween</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">biasedNumberBetween</span>(<span class="hljs-variable">$min</span> = <span class="hljs-number">10</span>, <span class="hljs-variable">$max</span> = <span class="hljs-number">20</span>, <span class="hljs-variable">$function</span> = <span class="hljs-string">&#x27;sqrt&#x27;</span>);<br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-HtmlLorem-html-文本"><a href="#Faker-Provider-HtmlLorem-html-文本" class="headerlink" title="Faker\Provider\HtmlLorem html 文本"></a>Faker\Provider\HtmlLorem html 文本</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">//生成不超过2级深度的HTML文档，并且在任何级别上都不超过3个元素。</span><br><span class="hljs-variable">$randomHtml</span> = <span class="hljs-variable">$faker</span>-&gt;<span class="hljs-title function_ invoke__">randomHtml</span>(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-zh-CN-Payment"><a href="#Faker-Provider-zh-CN-Payment" class="headerlink" title="Faker\Provider\zh_CN\Payment"></a>Faker\Provider\zh_CN\Payment</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// 生成一个随机的银行名称(基于真实的中国银行的列表)</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$faker</span>-&gt;bank; <span class="hljs-comment">// &#x27;中国建设银行&#x27;</span><br><br></code></pre></td></tr></table></figure>
+
+<h4 id="Faker-Provider-zh-TW-Person"><a href="#Faker-Provider-zh-TW-Person" class="headerlink" title="Faker\Provider\zh_TW\Person"></a>Faker\Provider\zh_TW\Person</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// Generates a random personal identify number</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$faker</span>-&gt;personalIdentityNumber; <span class="hljs-comment">// A223456789</span><br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="Faker-Provider-zh-TW-Company"><a href="#Faker-Provider-zh-TW-Company" class="headerlink" title="Faker\Provider\zh_TW\Company"></a>Faker\Provider\zh_TW\Company</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-comment">// Generates a random VAT / Company Tax number</span><br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$faker</span>-&gt;VAT; <span class="hljs-comment">//23456789### `Faker\Provider\Base 基本`</span><br></code></pre></td></tr></table></figure>
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/PHP/" class="category-chain-item">PHP</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/PHP/Laravel/" class="category-chain-item">Laravel</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/PHP/Laravel/Faker/" class="category-chain-item">Faker</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/php/">#php</a>
+      
+        <a href="/tags/laravel/">#laravel</a>
+      
+        <a href="/tags/%E6%A8%A1%E5%9E%8B%E5%B7%A5%E5%8E%82/">#模型工厂</a>
+      
+        <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A1%AB%E5%85%85/">#数据填充</a>
+      
+        <a href="/tags/faker/">#faker</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Laravel使用模型工厂进行数据填充</div>
+      <div>https://calmchen.com/posts/a11f4b7f.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Calm</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年8月15日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年8月15日</div>
+        </div>
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/7206c742.html" title="秒杀系统">
+                        <span class="hidden-mobile">秒杀系统</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.17/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"4AoGs3nrzY2BK9y2V55rXnjc-gzGzoHsz","appKey":"oBEu61dfpCCFRiTRxfxCecrw","path":"window.location.pathname","placeholder":"留下你的足迹..","avatar":"retro","meta":["nick","mail","link"],"requiredFields":["nick","mail"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://4aogs3nr.lc-cn-n1-shared.com","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"enableQQ":178320938},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div>Calm的博客 | 记录成长过程</div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      鲁ICP备19030616号
+    </a>
+  </span>
+  
+    
+      <span>
+        <a
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=19030616"
+          rel="nofollow noopener"
+          class="beian-police"
+          target="_blank"
+        >
+          
+            <span style="visibility: hidden; width: 0">|</span>
+            <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+          
+          <span>鲁ICP备19030616号-3</span>
+        </a>
+      </span>
+    
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
