@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-15T10:21:26.408Z</updated>
+  <updated>2022-08-16T05:50:37.485Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pipeline设计模式</title>
+    <link href="https://calmchen.com/posts/88d5391a.html"/>
+    <id>https://calmchen.com/posts/88d5391a.html</id>
+    <published>2022-08-16T02:05:02.000Z</published>
+    <updated>2022-08-16T05:50:37.485Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;pipeline设计模式&quot;&gt;&lt;a href=&quot;#pipeline设计模式&quot; class=&quot;headerlink&quot; title=&quot;pipeline设计模式&quot;&gt;&lt;/a&gt;pipeline设计模式&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/PHP/"/>
+    
+    <category term="Laravel" scheme="https://calmchen.com/categories/PHP/Laravel/"/>
+    
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
+    
+    <category term="laravel" scheme="https://calmchen.com/tags/laravel/"/>
+    
+    <category term="设计模式" scheme="https://calmchen.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Laravel使用模型工厂进行数据填充</title>
     <link href="https://calmchen.com/posts/a11f4b7f.html"/>
     <id>https://calmchen.com/posts/a11f4b7f.html</id>
     <published>2022-08-15T08:45:50.000Z</published>
-    <updated>2022-08-15T10:21:26.408Z</updated>
+    <updated>2022-08-15T10:32:54.145Z</updated>
     
     
       
@@ -677,39 +708,6 @@
     <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
     
     <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mac安装maven</title>
-    <link href="https://calmchen.com/posts/25ff2e8c.html"/>
-    <id>https://calmchen.com/posts/25ff2e8c.html</id>
-    <published>2022-05-13T05:55:40.000Z</published>
-    <updated>2022-05-16T03:48:49.725Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;1-官网下载-然后解压&quot;&gt;&lt;a href=&quot;#1-官网下载-然后解压&quot; class=&quot;headerlink&quot; title=&quot;1.官网下载,然后解压&quot;&gt;&lt;/a&gt;1.&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
-    
-    <category term="Mac" scheme="https://calmchen.com/categories/Java/Mac/"/>
-    
-    <category term="Maven" scheme="https://calmchen.com/categories/Java/Mac/Maven/"/>
-    
-    
-    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
-    
-    <category term="Maven" scheme="https://calmchen.com/tags/Maven/"/>
-    
-    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
     
   </entry>
   
