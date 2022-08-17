@@ -16,28 +16,24 @@
   <meta name="author" content="Calm">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. elasticsearch简介 elasticsearch介绍  Elasticsearch 是一个分布式、高扩展、高实时的搜索与数据分析引擎。它能很方便的使大量数据具有搜索、分析和探索的能力。充分利用Elasticsearch的水平伸缩性，能使数据在生产环境变得更有价值。Elasticsearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elasticsearch 数据库中，再">
+    <meta name="description" content="收藏夹【自用】 1、PHP 知乎：对 PHP 变量的实现方式以及内存管理的梳理 公众号 PHP 饭米粒：【PHP7 源码分析】PHP 中 $_POST 揭秘 Clean PHP Code （2017-10-23） 史上最全 PHPStorm Xdebug 断点调试 Docker 环境下 PHP 教程 （2020-04-05） 公众号 码农心得：理解 PHP 8 中的 Attributes (注解)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ELK部署Linux">
-<meta property="og:url" content="https://calmchen.com/posts/7616fb11.html">
+<meta property="og:title" content="收藏夹【自用】">
+<meta property="og:url" content="https://calmchen.com/posts/5a65df3b.html">
 <meta property="og:site_name" content="成小琴快跑">
-<meta property="og:description" content="1. elasticsearch简介 elasticsearch介绍  Elasticsearch 是一个分布式、高扩展、高实时的搜索与数据分析引擎。它能很方便的使大量数据具有搜索、分析和探索的能力。充分利用Elasticsearch的水平伸缩性，能使数据在生产环境变得更有价值。Elasticsearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elasticsearch 数据库中，再">
+<meta property="og:description" content="收藏夹【自用】 1、PHP 知乎：对 PHP 变量的实现方式以及内存管理的梳理 公众号 PHP 饭米粒：【PHP7 源码分析】PHP 中 $_POST 揭秘 Clean PHP Code （2017-10-23） 史上最全 PHPStorm Xdebug 断点调试 Docker 环境下 PHP 教程 （2020-04-05） 公众号 码农心得：理解 PHP 8 中的 Attributes (注解)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://qiniu.calmchen.com/blog/2022-05-06-kibana_success.png">
-<meta property="og:image" content="https://qiniu.calmchen.com/blog/2022-05-06-elasticsearch_success.png">
-<meta property="article:published_time" content="2022-04-29T07:16:10.000Z">
-<meta property="article:modified_time" content="2022-05-07T09:01:26.834Z">
+<meta property="article:published_time" content="2022-08-16T14:03:09.000Z">
+<meta property="article:modified_time" content="2022-08-17T00:48:58.625Z">
 <meta property="article:author" content="Calm">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Elasticsearch">
+<meta property="article:tag" content="收藏夹">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://qiniu.calmchen.com/blog/2022-05-06-kibana_success.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>ELK部署Linux - 成小琴快跑</title>
+  <title>收藏夹【自用】 - 成小琴快跑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -220,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ELK部署Linux"></span>
+            <span id="subtitle" data-typed-text="收藏夹【自用】"></span>
           
         </div>
 
@@ -231,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-04-29 15:16" pubdate>
-          2022年4月29日 下午
+        <time datetime="2022-08-16 22:03" pubdate>
+          2022年8月16日 晚上
         </time>
       </span>
     
@@ -243,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.4k 字
+          3k 字
         
       </span>
     
@@ -254,7 +250,7 @@
         
         
         
-          20 分钟
+          26 分钟
         
       </span>
     
@@ -300,12 +296,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">ELK部署Linux</h1>
+            <h1 style="display: none">收藏夹【自用】</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：3 个月前
+                    本文最后更新于：4 分钟前
                   
                 
               </p>
@@ -313,77 +309,54 @@
             
               <div class="markdown-body">
                 
-                <h2 id="1-elasticsearch简介"><a href="#1-elasticsearch简介" class="headerlink" title="1. elasticsearch简介"></a><strong>1. elasticsearch简介</strong></h2><blockquote>
-<p>elasticsearch介绍</p>
-</blockquote>
-<p>Elasticsearch 是一个分布式、高扩展、高实时的搜索与数据分析引擎。它能很方便的使大量数据具有搜索、分析和探索的能力。充分利用Elasticsearch的水平伸缩性，能使数据在生产环境变得更有价值。Elasticsearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elasticsearch 数据库中，再通过分词控制器去将对应的语句分词，将其权重和分词结果一并存入数据，当用户搜索数据时候，再根据权重将结果排名，打分，再将返回结果呈现给用户。</p>
-<blockquote>
-<p>应用场景</p>
-</blockquote>
-<ul>
-<li>维基百科，类似百度百科</li>
-<li>The Guardian（国外新闻网站）</li>
-<li>Stack Overflow（国外的程序异常讨论论坛）</li>
-<li>GitHub（开源代码管理）</li>
-<li>电商网站</li>
-<li>日志数据分析</li>
-<li>商品价格监控网站</li>
-<li>BI系统，商业智能</li>
-<li>站内搜索（电商，招聘，门户，等等），</li>
-<li>IT系统搜索（OA，CRM，ERP，等等），</li>
-<li>数据分析（ES热门的一个使用场景）</li>
+                <h1 id="收藏夹【自用】"><a href="#收藏夹【自用】" class="headerlink" title="收藏夹【自用】"></a>收藏夹【自用】</h1><hr>
+<h2 id="1、PHP"><a href="#1、PHP" class="headerlink" title="1、PHP"></a>1、PHP</h2><ul>
+<li>知乎：对 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/58165332">PHP 变量的实现方式以及内存管理的梳理</a></li>
+<li>公众号 PHP 饭米粒：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/SDYKwGUdk85v58WHzVJE_A">【PHP7 源码分析】PHP 中 $_POST 揭秘</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/nineyang/clean-php-code">Clean PHP Code</a> （2017-10-23）</li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022269173">史上最全 PHPStorm Xdebug 断点调试 Docker 环境下 PHP 教程</a> （2020-04-05）</li>
+<li>公众号 码农心得：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/p1FvhfScfklY8LCEtGg2Mg">理解 PHP 8 中的 Attributes (注解)</a> （2020-06-11）</li>
+<li>惠新辰：<a target="_blank" rel="noopener" href="https://www.laruence.com/2020/07/09/6015.html">一个关于 if else 容易迷惑的问题</a></li>
+<li>公众号 码农 UP2U：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/It9Thtz20rSQ3Z4u_3rl6g">PHP 代码混淆处理思路</a> （2020-07-11）</li>
+<li>分享一些 <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000040084826">PHP 中有用的知识和坑</a> （2021-05-29）</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/alexeymezenin/laravel-best-practices/blob/master/chinese.md">Laravel 最佳实践</a></li>
 </ul>
-<blockquote>
-<p>es的功能</p>
-</blockquote>
-<ul>
-<li>分布式的搜索引擎和数据分析引擎</li>
-<li>全文检索，结构化检索，数据分析</li>
-<li>对海量数据进行近实时的处理</li>
+<h2 id="2、数据库"><a href="#2、数据库" class="headerlink" title="2、数据库"></a>2、数据库</h2><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul>
+<li>公众号 Python 那些事： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/9S59a7jjQEn42PFXqpiuIw">一通骚操作，我把 SQL 执行效率提高了 10000000 倍！</a> （2019-06-02）索引优化相关</li>
+<li>公众号 帅地玩编程：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IZRKPH4FYPR-mltim6J7hA">面试官：MySQL 中的自增主键用完了怎么办？</a> （2019-08-23）</li>
+<li>公众号 Java 知识共享：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LWEs7tSkapGQ_WE6zYhjDg">关于定时备份 MySQL 数据库，如何操作？</a> （2019-09-17）</li>
+<li>公众号 架构师之路：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/AwAEJVWtYfiy79jXGC7olA">或许你不知道的 12 条 SQL 技巧</a> （2020-03-26）</li>
+<li>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/vXnG1SVYeybaLeGGVnh2vA">拜托，别再问我什么是 B+ 树了</a> （2020-04-07）</li>
+<li>公众号 算法爱好者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/pRqXdWYyhQD0x_NAdQLyHA">为什么别人能用好 MySQL？万字详解其复杂原理</a> （2020-04-18）InnoDB 详解</li>
+<li>公众号 莲花童子哪吒：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/D38PLc6LWMbj7tyEorCCcQ">抱歉，索引原理都知道，让我优化就很苦恼。这才明白原理要这样用！</a> （2020-04-22）</li>
+<li>MySql 学习笔记（二）：<a target="_blank" rel="noopener" href="https://blog.51cto.com/u_13593129/2357192">SQL 执行顺序</a></li>
+<li>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/F1EY0hY9WrzmeRp3C5C9Pw">别再一知半解啦，索引其实就这么回事！</a> （2020-06-20）</li>
+<li>Mysql - <a target="_blank" rel="noopener" href="http://www.linkedkeeper.com/1690.html">慢 sql 优化方法论</a> （2020-07-07）</li>
+<li>公众号 InfoQ：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/XCSvDx90ml3uDkwBah8XsQ">别再用 OFFSET 和 LIMIT 分页了</a> （2020-08-14）</li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6901488402353520647">数据库允许空值 (null)，往往是悲剧的开始</a> （2020-12-02）</li>
+<li>公众号 开源中国：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/i73OVvQ1WT55aUJ68EELRQ">算法的艺术：MySQL order by 对各种排序算法的巧用</a> （2021-03-05）</li>
+<li>公众号 阿里开发者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Whx50KNUuXORO05bi7PECw">一文详解 SQL 关联子查询</a> （2021-03-29）</li>
+<li>公众号 架构师技术栈：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/WLxQAIW8nL6KoqWNIM1IaQ">为什么 MySQL 默认值为 null，它不推荐？</a> （2021-04-15）</li>
+<li>公众号 架构师技术栈：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/37SXgXqaP-j1OmdcTUNUOg">为什么大家都说 SELECT * 效率低</a> （2021-06-09）</li>
+<li>公众号 编程界：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/hBg1kAacQPqHupARav9kNw">MySQL 时间戳类型真的了解吗？早看早避坑！</a> （2021-06-09）</li>
+<li>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/O_C5DpqWlCHLGphy-W00yg">MySQL 避坑指南之隐式数据类型转换</a> （2021-06-23）</li>
+<li>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/l6F6kABHHmyq5qsK55s9eA">MySQL 中的共享表空间与独立表空间，用哪个好呢？</a> （2021-07-16）</li>
+<li>公众号 架构师专栏：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YTlnKTopYB7T40nMrtty4g">MySQL 大批量插入，如何过滤掉重复数据？</a> （2021-07-19）</li>
+<li>公众号 架构师专栏：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/fUAKMjqjklrTg1692k_Adw">面试官：如果要存 ip 地址，用什么数据类型比较好</a> （2021-08-11）</li>
+<li>公众号 架构师专栏：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/2GXv4DThjY7gwBaTHpoexQ">4 款 MySQL 调优工具，公司大神都在用</a> （2021-08-18）</li>
+<li>公众号 Linux 爱好者：步步深入：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5LEc99nUOSOo7vgBdmaLcg">MySQL 架构总览 -&gt; 查询执行流程 -&gt;SQL 解析顺序</a> （2021-09-11）</li>
+<li>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IQyRiGxQt6wCMuPHeMnnlA">执行一条 SQL 语句，期间发生了什么？</a> （2022-06-09）</li>
+<li>今日头条：<a target="_blank" rel="noopener" href="https://www.toutiao.com/article/7103554562748973568/?app=news_article&timestamp=1655016253&use_new_style=1&req_id=202206121444120101420341590290D42B&group_id=7103554562748973568&share_token=DE693EE4-2A01-459A-9AD3-B069C584FE31&tt_from=weixin&utm_source=weixin&utm_medium=toutiao_ios&utm_campaign=client_share&wxshare_count=1&source=m_redirect&wid=1660659705935">3000 帧动画图解 MySQL 为什么需要 binlog、redo log 和 undo log</a> （2022-05-31）</li>
 </ul>
-<blockquote>
-<p>es的特点</p>
-</blockquote>
-<ol>
-<li>大型分布式集群</li>
-<li>功能强大</li>
-<li>部署简单</li>
-<li>能够替代数据库的不足之处</li>
-</ol>
-<h2 id="2-elasticsearch的安装配置"><a href="#2-elasticsearch的安装配置" class="headerlink" title="2. elasticsearch的安装配置"></a><strong>2. elasticsearch的安装配置</strong></h2><ol>
-<li>docker获取es的镜像</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker pull elasticsearch:7.12.1<br></code></pre></td></tr></table></figure>
-
-<ol>
-<li>创建es文件目录以及创建配置文件</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> /docker<br><span class="hljs-built_in">mkdir</span> /docker/es<br><span class="hljs-built_in">mkdir</span> /docker/es/conf<br><span class="hljs-built_in">mkdir</span> /docker/es/data<br><span class="hljs-built_in">mkdir</span> /docker/es/plugins<br><span class="hljs-built_in">chmod</span> -R 777 /docker/es<br><br><span class="hljs-built_in">touch</span> /docker/es/conf/elasticsearch.yml<br><br>cluster.name: my-application       <span class="hljs-comment">#集群名称</span><br>node.name: node-1                  <span class="hljs-comment">#节点名称</span><br><span class="hljs-comment">#数据和日志的存储目录</span><br>path.data: /usr/share/elasticsearch/data<br>path.logs: /usr/share/elasticsearch/logs<br><span class="hljs-comment">###设置绑定的ip，设置为0.0.0.0以后就可以让任何计算机节点访问到了</span><br>network.host: 0.0.0.0<br>http.port: 9200 <span class="hljs-comment">#端口</span><br><span class="hljs-comment">###设置在集群中的所有节点名称，这个节点名称就是之前所修改的，当然你也可以采用默认的也行，目前 是单机，放入一个节点即可</span><br>cluster.initial_master_nodes: [<span class="hljs-string">&quot;node-1&quot;</span>]<br><span class="hljs-comment">### 设置密码</span><br><span class="hljs-comment">#xpack.security.enabled: true</span><br><span class="hljs-comment">#xpack.license.self_generated.type: basic</span><br><span class="hljs-comment">#xpack.security.transport.ssl.enabled: true</span><br><br><span class="hljs-comment"># 配置X-Pack</span><br>http.cors.allow-origin: <span class="hljs-string">&quot;*&quot;</span><br><span class="hljs-comment">#http.cors.allow-headers: Authorization</span><br><br></code></pre></td></tr></table></figure>
-
-<ol>
-<li>构建容器</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 9200:9200 -d --name es -e ES_JAVA_OPTS=<span class="hljs-string">&quot;-Xms512m -Xmx512m&quot;</span> -v /docker/es/conf/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml -v /docker/es/data:/usr/share/elasticsearch/data -v /docker/es/logs:/usr/share/elasticsearch/logs -v /docker/es/plugins:/usr/share/elasticsearch/plugins --privileged=<span class="hljs-literal">true</span> elasticsearch:7.12.<br><br>出现异常：max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]<br>解决：<br>1. 修改配置sysctl.conf<br>vi /etc/sysctl.conf<br><br>2. 在尾行添加以下内容<br>vm.max_map_count=655300<br><br>3. 执行命令<br>sysctl -p<br></code></pre></td></tr></table></figure>
-
-<ol>
-<li>拉取kibana镜像</li>
-</ol>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> pull kibana:<span class="hljs-number">7</span>.<span class="hljs-number">12</span>.<span class="hljs-number">1</span><br><br></code></pre></td></tr></table></figure>
-
-<ol>
-<li>kibana的配置文件</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> /docker/kibana<br><span class="hljs-built_in">mkdir</span> /docker/kibana/conf<br><span class="hljs-built_in">touch</span> /docker/kibana/conf/kibana.yml<br><br>文件内容：<br>server.name: kibana<br>server.host: <span class="hljs-string">&quot;0.0.0.0&quot;</span><br>elasticsearch.hosts: [<span class="hljs-string">&quot;http://你的es地址:9200&quot;</span>]<br>xpack.monitoring.ui.container.elasticsearch.enabled: <span class="hljs-literal">true</span><br><span class="hljs-comment">#冒号后必须加空格  设置中文</span><br>i18n.locale: <span class="hljs-string">&quot;zh-CN&quot;</span><br></code></pre></td></tr></table></figure>
-
-<ol>
-<li>构建kibana的容器</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run -p 5601:5601 -d --name kibana -v /docker/kibana/conf/kibana.yml:/usr/share/kibana/config/kibana.yml --privileged=<span class="hljs-literal">true</span> kibana:7.12.1<br></code></pre></td></tr></table></figure>
-
-<p>访问xxxxxxx:9200与xxxxx:5601</p>
-<p>kibana：</p>
-<p><img src="https://qiniu.calmchen.com/blog/2022-05-06-kibana_success.png" srcset="/img/loading.gif" lazyload alt="kibana部署成功截图"><br>elasticsearch:</p>
-<p><img src="https://qiniu.calmchen.com/blog/2022-05-06-elasticsearch_success.png" srcset="/img/loading.gif" lazyload alt="elasticsearch部署成功截图"></p>
+<h3 id="数据库规范"><a href="#数据库规范" class="headerlink" title="数据库规范"></a>数据库规范</h3><p>公众号 NodeJs 技术栈： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/8XO9TF4BhAxWv90HiPfOvw">数据库范式那些事</a> （2019-11-28）<br>公众号 运维咖啡吧：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/zfR5kn1tejVSiH-mireT3A">专业的 MySQL 开发规范</a> （2019-09-20）<br>公众号 程序猿：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/NZU_79laolqkY1m3jThz6w">公司用的 MySQL 团队开发规范</a> （2021-11-18）</p>
+<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>公众号 腾讯技术工程：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/xQDYaunRK-JMY7hoxN6PAQ">redis 实践及思考</a> （2019-08-21）<br>公众号 DUBBO 之家：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Pz2o5gn-DfbrDvvOZrdGGg">了解什么是 Redis 的雪崩、穿透和击穿？Redis 崩溃之后会怎么样？系统该如何应对这种情况？如何处理 Redis 的穿透？</a> （2019-09-17）<br>敖丙：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022029639">Redis 缓存雪崩、击穿、穿透</a><br>公众号 Linux 爱好者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/LawRPLTSUFQwZU_MKLZEZA">什么是缓存系统三座大山</a> （2020-07-19）<br>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qqBhH8jieIeIQcJRRI5MJA">Redis 会遇到的 15 个「坑」，你踩过几个？</a> （2021-04-07）</p>
+<h3 id="其他-分库分表"><a href="#其他-分库分表" class="headerlink" title="其他 分库分表"></a>其他 分库分表</h3><p>公众号 数据库技术详谈：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/B4JwxxkJkLVaorNm0L5fCQ">说说分库分表的一个最佳实践</a> （2019-04-01）<br>公众号 石杉的架构笔记：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/cUsWHOS-MeJQN0yfzBzeAw">盘点分库分表中，你一定要避开的那些坑！</a> （2019-09-15）<br>公众号 架构师之路： <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/H_2hyEqQ70Y_OoFZh_P_5A">炸！业界难题，跨库分页的几种常见方案</a> （2019-05-13）<br>公众号 方志朋：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/g7anCRM58EFMXKNdbMlWzA">不用找了，大厂在用的分库分表方案，都在这了！</a> （2019-09-21）<br>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/goY6xmOVgKTd4-iX3MVbpA">这也许是史上最详尽的分库分表文章之一</a> （2021-06-12）<br>公众号 阿里开发者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/X6FI9Ci7ZXGDNDCkh2VnNA">浅谈分库分表那些事儿</a> （2021-03-22）<br>公众号 架构师专栏：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/yEgrhVQL3vORVatG2Lo89A">老大又怼我，不要动不动，就提 “分库分表”</a> （2021-07-21）</p>
+<h3 id="隔离级别、锁"><a href="#隔离级别、锁" class="headerlink" title="隔离级别、锁"></a>隔离级别、锁</h3><p>公众号 Java 技术江湖：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/z7IgL8TkcIhyFl7ApvrKFg">一文带你轻松搞懂事务隔离级别 (图文详解)</a> （2019-05-14）<br>公众号 Java 技术：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TrPM7b3RFYRk-SzxEHm5lA">图文并茂讲解悲观锁与乐观锁</a> （2019-06-26）<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020762791">MySQL 的又一神器 - 锁，MySQL 面试必备</a> （2019-10-22）</p>
+<h3 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h3><ul>
+<li>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ac-5nMb9ZM8dqlVjZ-A6hw">2 万字详解，吃透 ES！</a> （2022-06-27）</li>
+</ul>
+<h2 id="3、架构"><a href="#3、架构" class="headerlink" title="3、架构"></a>3、架构</h2><p>公众号 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/2QM2vTjevpKeZ5jy3Ss95g">喔家 ArchiSelf： 软件架构的 10 个常见模式</a><br>公众号 编程原理：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qaj37YYxz7afD-WfAZeN8Q">高并发编程知识体系</a><br><a target="_blank" rel="noopener" href="https://github.com/xingshaocheng/architect-awesome/blob/master/README.md">《后端架构师技术图谱》</a><br>公众号 有赞 coder ：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/26x8O1bRzurl84e3nM6TTA">CAP 一致性协议及应用解析</a> （2019-01-23）<br>公众号 喔家 ArchiSelf：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/gV7DqSgSkz_X56p2X_x_cQ">CAP 理论与分布式系统设计</a> （2018-01-22）<br>公众号 Linux 爱好者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/1xWnduMOgUeITA715sC1UA">架构设计之「 CAP 定理 」</a>（2019-05-05）<br>公众号 阿里开发者：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/muS68_vtXTrIGd1JNmS50A">揭秘！现代 IM 系统的消息架构如何设计？</a> （2019-05-06）<br>掘金：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903847031226382">如何设计一个百万级用户的抽奖系统？</a> （2019-05-20）<br>知乎：[Feed 流系统设计 - 总纲] (<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/72882547">https://zhuanlan.zhihu.com/p/72882547</a>)<br>公众号 架构师之路：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/QSpBDlW1KktJ8iHaYcO2rw">并发扣款，如何保证数据的一致性？</a> （2019-08-29）<br>公众号 架构师之路：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/WSocbTKWYBqOSfimdfm_JA">每秒 100W 请求，12306 秒杀业务，架构如何优化？</a> （2019-09-09）<br>公众号 架构师之路：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/mvFwjgxliwx808Hn_9ruEA">10w 定时任务，如何高效触发超时</a> （2017-03-09）<br>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/RwiPfMTj2MR2x0g8riWjXw">1 分钟抗住 10 亿请求！某些 App 是怎么做到的？）</a> （2020-03-29）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/dreamdiary/article/details/91555532">可自由扩展的促销活动架构设计</a><br><a target="_blank" rel="noopener" href="https://skrshop.tech/">电商设计手册</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000022566350">什么，秒杀系统也有这么多种！</a> （2020-05-07）<br>敖丙：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023517939">秒杀系统设计</a> （2020-08-06）<br>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/l1zxZncpJ-ay4eM7oWl4EQ">双十一的秒杀场景是如何设计的？</a> （2020-11-11）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/csdnnews/article/details/108231736">揭秘广告系统架构</a> （2020-08-25）<br>公众号 产品壹佰开课吧：腾讯工作心得：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/IfFNx-nDTydSH1MojUZILA">统一登录的几种常用设计模式</a> （2021-01-17）<br>公众号 CSDN：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/YLBXAdNkWntDwe0KU6K0zQ">10 张图带你彻底搞懂限流、熔断、服务降级</a> （2021-03-30）<br>公众号 阿里开发者：我在架构设计和代码开发中的一些常用原则（2021-03-19）<br>公众号 人人都是面试官：系统设计之路：如何设计一个 URL 短链服务（2021-04-30）<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/568601?from=kaifazhe0630">后台服务器开发高性能最佳实践</a> （2020-11-20）<br>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/6RXONiWRb5GmFN9VV14m_Q">支付中心设计与方案</a> （2021-09-03）<br>公众号 水滴与银弹：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/T6mMDdtTfBuIiEowCpqu6Q">搞懂异地多活，看这篇就够了</a> （2021-10-15）<br>公众号 程序员的那些事：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/EkDSeTuYfsBexOiNg6NleQ">万字详解秒杀系统！</a> （2021-11-15）<br><a href="8c2bfe31.html">系统设计入门</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p>原文作者：MArtian<br>转自链接：<a target="_blank" rel="noopener" href="https://learnku.com/laravel/t/69233">https://learnku.com/laravel/t/69233</a></p>
 
                 
               </div>
@@ -402,15 +375,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/categories/%E6%94%B6%E8%97%8F%E5%A4%B9/" class="category-chain-item">收藏夹</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/Linux/Elasticsearch/" class="category-chain-item">Elasticsearch</a>
-  
-  
-
   
 
       </span>
@@ -424,9 +390,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
-      
-        <a href="/tags/Elasticsearch/">#Elasticsearch</a>
+        <a href="/tags/%E6%94%B6%E8%97%8F%E5%A4%B9/">#收藏夹</a>
       
     </div>
   
@@ -438,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ELK部署Linux</div>
-      <div>https://calmchen.com/posts/7616fb11.html</div>
+      <div>收藏夹【自用】</div>
+      <div>https://calmchen.com/posts/5a65df3b.html</div>
     </div>
     <div class="license-meta">
       
@@ -451,13 +415,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年4月29日</div>
+          <div>2022年8月16日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年5月7日</div>
+          <div>2022年8月17日</div>
         </div>
       
       
@@ -488,15 +452,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/3acc6de0.html" title="Laravel + Elasticsearch 实现中文搜索">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Laravel + Elasticsearch 实现中文搜索</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/88d5391a.html" title="pipeline设计模式">
+                        <span class="hidden-mobile">pipeline设计模式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
