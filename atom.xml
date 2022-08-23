@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-18T07:11:59.423Z</updated>
+  <updated>2022-08-23T02:33:27.359Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac Python版本</title>
+    <link href="https://calmchen.com/posts/3066d4bb.html"/>
+    <id>https://calmchen.com/posts/3066d4bb.html</id>
+    <published>2022-08-22T09:37:40.000Z</published>
+    <updated>2022-08-23T02:33:27.359Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;查看python版本&quot;&gt;&lt;a href=&quot;#查看python版本&quot; class=&quot;headerlink&quot; title=&quot;查看python版本&quot;&gt;&lt;/a&gt;查看python版本&lt;/h2&gt;&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="Mac" scheme="https://calmchen.com/categories/Mac/"/>
+    
+    <category term="Python" scheme="https://calmchen.com/categories/Mac/Python/"/>
+    
+    
+    <category term="mac" scheme="https://calmchen.com/tags/mac/"/>
+    
+    <category term="python" scheme="https://calmchen.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>收藏夹【自用】</title>
@@ -604,9 +633,9 @@
     
     <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
     
-    <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
-    
     <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
+    
+    <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
     
   </entry>
   
@@ -668,38 +697,6 @@
     <category term="Jdk" scheme="https://calmchen.com/tags/Jdk/"/>
     
     <category term="SpringCloud" scheme="https://calmchen.com/tags/SpringCloud/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【IDEA】常见问题-解决方案</title>
-    <link href="https://calmchen.com/posts/fdcf83a4.html"/>
-    <id>https://calmchen.com/posts/fdcf83a4.html</id>
-    <published>2022-05-16T03:19:52.000Z</published>
-    <updated>2022-05-16T08:47:30.666Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;【IDEA】常见问题-解决方案&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1、‘project-JDK-is-not-define‘&quot;&gt;&lt;a href=&quot;#1、‘project-JDK-is-not-define‘&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
-    
-    <category term="Idea" scheme="https://calmchen.com/categories/Java/Idea/"/>
-    
-    
-    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
-    
-    <category term="Idea" scheme="https://calmchen.com/tags/Idea/"/>
     
   </entry>
   

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://calmchen.com/posts/3066d4bb.html</loc>
+    
+    <lastmod>2022-08-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://calmchen.com/posts/55a24faf.html</loc>
+    
+    <lastmod>2022-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://calmchen.com/posts/5a65df3b.html</loc>
     
     <lastmod>2022-08-18</lastmod>
@@ -129,15 +147,6 @@
   
   <url>
     <loc>https://calmchen.com/posts/c8bf02f0.html</loc>
-    
-    <lastmod>2022-07-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://calmchen.com/posts/55a24faf.html</loc>
     
     <lastmod>2022-07-25</lastmod>
     
@@ -326,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://calmchen.com/posts/7616fb11.html</loc>
+    <loc>https://calmchen.com/posts/4c38ef0c.html</loc>
     
     <lastmod>2022-05-07</lastmod>
     
@@ -335,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://calmchen.com/posts/4c38ef0c.html</loc>
+    <loc>https://calmchen.com/posts/7616fb11.html</loc>
     
     <lastmod>2022-05-07</lastmod>
     
@@ -346,7 +355,7 @@
 
   <url>
     <loc>https://calmchen.com/</loc>
-    <lastmod>2022-08-18</lastmod>
+    <lastmod>2022-08-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

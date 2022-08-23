@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Mac Python版本</title>
+      <link href="/posts/3066d4bb.html"/>
+      <url>/posts/3066d4bb.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="查看python版本"><a href="#查看python版本" class="headerlink" title="查看python版本"></a>查看python版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python3<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python3<br>/Library/Frameworks/Python.framework/Versions/3.10/bin/python3<br></code></pre></td></tr></table></figure><h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><p><strong>1.下载</strong><br>从官方下载网站获得任何Python版本下载<br><a href="https://www.python.org/downloads/release/python-2718/">https://www.python.org/downloads/release/python-2718/</a><br> 运行安装即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> python2.7<br><span class="hljs-built_in">which</span> python3.10<br></code></pre></td></tr></table></figure><p><strong>2. 默认安装目录</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">/Library/Frameworks/Python.framework/Versions/3.10<br>/Library/Frameworks/Python.framework/Versions/2.7<br></code></pre></td></tr></table></figure><p><strong>3. 配置环境变量</strong><br>1）终端输入：<code>vim ~/.bash_profile</code> 编辑文件并输入如下内容：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs text"># python 3<br>#alias python=&quot;/Library/Frameworks/Python.framework/Versions/3.10/bin/python3.10&quot;<br>#export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3.10<br>#alias pip=&quot;/Library/Frameworks/Python.framework/Versions/3.10/bin/pip3.10&quot;<br><br># python 2<br>alias python=&quot;/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7&quot;<br>export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin/pip2.7<br>alias pip=&quot;/Library/Frameworks/Python.framework/Versions/2.7/bin/pip2.7&quot;<br></code></pre></td></tr></table></figure><p><strong>4. 查看版本</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">python2 -V<br>python3 -V <br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Mac </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mac </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>收藏夹【自用】</title>
       <link href="/posts/5a65df3b.html"/>
       <url>/posts/5a65df3b.html</url>
@@ -570,9 +599,9 @@
             
             <tag> PHP </tag>
             
-            <tag> swoole </tag>
-            
             <tag> Mac </tag>
+            
+            <tag> swoole </tag>
             
         </tags>
       
@@ -738,7 +767,7 @@
       <link href="/posts/55a24faf.html"/>
       <url>/posts/55a24faf.html</url>
       
-        <content type="html"><![CDATA[<h1 id="自用Mac装机软件"><a href="#自用Mac装机软件" class="headerlink" title="自用Mac装机软件"></a>自用Mac装机软件</h1><h2 id="1、App-Store直接下载"><a href="#1、App-Store直接下载" class="headerlink" title="1、App Store直接下载"></a>1、App Store直接下载</h2><ul><li>wechat</li><li>QQ</li><li>钉钉</li><li>Xcode - 软件开发工具</li><li>iPic - Markdown图床工具</li><li>uPic - Markdown图床工具</li><li>XMind - 思维导图</li></ul><h2 id="2、官网下载"><a href="#2、官网下载" class="headerlink" title="2、官网下载"></a>2、官网下载</h2><ul><li><a href="https://www.google.cn/intl/zh-CN/chrome/">谷歌浏览器</a></li><li><a href="https://pinyin.sogou.com/mac/">搜狗输入法</a></li><li><a href="https://iterm2.com/downloads.html">iterm2</a> - macOS Terminal</li><li><a href="https://www.postman.com/downloads/">Postman</a></li><li><a href="http://www.u.tools/">utools</a> - 新一代效率工具平台</li><li><a href="https://pages.tmall.com/wow/aliyun-market/act/download-mail-client?wh_biz=tm">阿里邮箱</a></li><li><a href="https://paper.meiyuan.in/">Paper</a> - 专为 Mac 设计的壁纸应用</li><li><a href="https://www.docker.com/get-started/">Docker</a></li><li><a href="https://www.notion.so/desktop">Notion</a> - 笔记应用</li><li><a href="https://typoraio.cn/">Typora</a> - Markdowm文本编辑器</li><li><a href="https://www.apifox.cn/">Apifox</a> - API 文档、API 调试、API Mock、API 自动化测试</li><li><a href="https://ezip.awehunt.com/">MacZip</a> - Mac解压缩软件</li></ul><h2 id="3、破解版"><a href="#3、破解版" class="headerlink" title="3、破解版"></a>3、破解版</h2><h3 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h3><blockquote><ul><li><a href="https://macwk.com/">https://macwk.com/</a></li><li><a href="https://xclient.info/">https://xclient.info/</a></li></ul></blockquote><h3 id="常用App"><a href="#常用App" class="headerlink" title="常用App"></a>常用App</h3><ul><li><a href="https://macwk.com/soft/royal-tsx">Royal TSX</a> - Mac远程管理软件</li><li><a href="https://macwk.com/soft/cleanmymac-x">CleanMyMac X</a> - Mac优化清理工具</li><li><a href="https://macwk.com/soft/adobe-acrobat-pro-dc">Adobe Acrobat Pro DC</a> - PDF编辑器</li><li><a href="https://macwk.com/soft/navicat-premium">Navicat Premium</a> - 16.0.12 数据库管理工具</li><li><a href="https://macwk.com/soft/intellij-idea">IntelliJ IDEA</a> - 2021.3 java开发集成环境 破解见IDEA破解</li><li><a href="https://macwk.com/soft/phpstorm">PhpStorm</a> - 2021.3 PHP开发集成环境</li><li><a href="https://www.jetbrains.com/datagrip/download/other.html">DataGrip</a> - 2021.1 SQL数据库管理开发工具</li><li><a href="https://macwk.com/soft/sublime-text">Sublime Text</a> - 代码编辑器 </li><li><a href="https://macwk.com/soft/listen1">Listen1</a> - 2.21.7 付费VIP音乐免费听</li><li><a href="https://macwk.com/soft/redis-desktop-manager">Redis Desktop Manager</a> - 2021.10.236 Redis 数据库管理工具</li><li><a href="https://macwk.com/soft/omnigraffle">OmniGraffle</a> - 7.19.4 图示/图表/流程图等绘制</li><li><a href="https://macwk.com/soft/beyond-compare">Beyond Compare</a> - 4.4.2 文件对比比较</li><li><a href="https://macwk.com/soft/tinycal">小历</a> - 漂亮的状态栏日历</li></ul><h2 id="4、其他"><a href="#4、其他" class="headerlink" title="4、其他"></a>4、其他</h2><h3 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h3><h3 id="php开发环境"><a href="#php开发环境" class="headerlink" title="php开发环境"></a>php开发环境</h3><blockquote><ul><li>docker</li></ul></blockquote><h3 id="java开发环境"><a href="#java开发环境" class="headerlink" title="java开发环境"></a>java开发环境</h3><blockquote><ul><li>idea</li><li>jdk</li><li>maven</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="自用Mac装机软件"><a href="#自用Mac装机软件" class="headerlink" title="自用Mac装机软件"></a>自用Mac装机软件</h1><h2 id="1、App-Store直接下载"><a href="#1、App-Store直接下载" class="headerlink" title="1、App Store直接下载"></a>1、App Store直接下载</h2><ul><li>wechat</li><li>QQ</li><li>钉钉</li><li>Xcode - 软件开发工具</li><li>iPic - Markdown图床工具</li><li>uPic - Markdown图床工具</li><li>XMind - 思维导图</li></ul><h2 id="2、官网下载"><a href="#2、官网下载" class="headerlink" title="2、官网下载"></a>2、官网下载</h2><ul><li><a href="https://www.google.cn/intl/zh-CN/chrome/">谷歌浏览器</a></li><li><a href="https://pinyin.sogou.com/mac/">搜狗输入法</a></li><li><a href="https://iterm2.com/downloads.html">iterm2</a> - macOS Terminal</li><li><a href="https://www.postman.com/downloads/">Postman</a></li><li><a href="http://www.u.tools/">utools</a> - 新一代效率工具平台</li><li><a href="https://pages.tmall.com/wow/aliyun-market/act/download-mail-client?wh_biz=tm">阿里邮箱</a></li><li><a href="https://paper.meiyuan.in/">Paper</a> - 专为 Mac 设计的壁纸应用</li><li><a href="https://www.docker.com/get-started/">Docker</a></li><li><a href="https://www.notion.so/desktop">Notion</a> - 笔记应用</li><li><a href="https://typoraio.cn/">Typora</a> - Markdowm文本编辑器</li><li><a href="https://www.apifox.cn/">Apifox</a> - API 文档、API 调试、API Mock、API 自动化测试</li><li><a href="https://ezip.awehunt.com/">MacZip</a> - Mac解压缩软件</li></ul><h2 id="3、破解版"><a href="#3、破解版" class="headerlink" title="3、破解版"></a>3、破解版</h2><h3 id="常用网站"><a href="#常用网站" class="headerlink" title="常用网站"></a>常用网站</h3><blockquote><ul><li><a href="https://macwk.com/">https://macwk.com/</a></li><li><a href="https://xclient.info/">https://xclient.info/</a></li></ul></blockquote><h3 id="常用App"><a href="#常用App" class="headerlink" title="常用App"></a>常用App</h3><ul><li><a href="https://macwk.com/soft/royal-tsx">Royal TSX</a> - Mac远程管理软件</li><li><a href="https://macwk.com/soft/cleanmymac-x">CleanMyMac X</a> - Mac优化清理工具</li><li><a href="https://macwk.com/soft/adobe-acrobat-pro-dc">Adobe Acrobat Pro DC</a> - PDF编辑器</li><li><a href="https://macwk.com/soft/navicat-premium">Navicat Premium</a> - 16.0.12 数据库管理工具</li><li><a href="https://macwk.com/soft/intellij-idea">IntelliJ IDEA</a> - 2021.2.2 java开发集成环境 破解见IDEA破解</li><li><a href="https://macwk.com/soft/phpstorm">PhpStorm</a> - 2021.2 PHP开发集成环境</li><li><a href="https://www.jetbrains.com/webstorm/download/other.html">Webstorm</a> - 2021.1.3 Web开发集成环境</li><li><a href="https://www.jetbrains.com/datagrip/download/other.html">DataGrip</a> - 2021.1.3 SQL数据库管理开发工具</li><li><a href="https://macwk.com/soft/sublime-text">Sublime Text</a> - 代码编辑器 </li><li><a href="https://macwk.com/soft/listen1">Listen1</a> - 2.21.7 付费VIP音乐免费听</li><li><a href="https://macwk.com/soft/redis-desktop-manager">Redis Desktop Manager</a> - 2021.10.236 Redis 数据库管理工具</li><li><a href="https://macwk.com/soft/omnigraffle">OmniGraffle</a> - 7.19.4 图示/图表/流程图等绘制</li><li><a href="https://macwk.com/soft/beyond-compare">Beyond Compare</a> - 4.4.2 文件对比比较</li><li><a href="https://macwk.com/soft/tinycal">小历</a> - 漂亮的状态栏日历</li></ul><h2 id="4、其他"><a href="#4、其他" class="headerlink" title="4、其他"></a>4、其他</h2><h3 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h3><h3 id="php开发环境"><a href="#php开发环境" class="headerlink" title="php开发环境"></a>php开发环境</h3><blockquote><ul><li>docker</li></ul></blockquote><h3 id="java开发环境"><a href="#java开发环境" class="headerlink" title="java开发环境"></a>java开发环境</h3><blockquote><ul><li>idea</li><li>jdk</li><li>maven</li></ul></blockquote>]]></content>
       
       
       <categories>
