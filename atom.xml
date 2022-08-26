@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-23T02:33:27.359Z</updated>
+  <updated>2022-08-26T01:58:06.818Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lin-cms-vue项目后端【laravel8】重构</title>
+    <link href="https://calmchen.com/posts/a23a1b48.html"/>
+    <id>https://calmchen.com/posts/a23a1b48.html</id>
+    <published>2022-08-25T08:50:46.000Z</published>
+    <updated>2022-08-26T01:58:06.818Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;lin-cms-laravel8重构&quot;&gt;&lt;a href=&quot;#lin-cms-laravel8重构&quot; class=&quot;headerlink&quot; title=&quot;lin-cms-laravel8重构&quot;&gt;&lt;/a&gt;lin-cms-laravel8重构&lt;/h1&gt;&lt;hr&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Laravel" scheme="https://calmchen.com/categories/Laravel/"/>
+    
+    <category term="PHP" scheme="https://calmchen.com/categories/Laravel/PHP/"/>
+    
+    
+    <category term="php" scheme="https://calmchen.com/tags/php/"/>
+    
+    <category term="laravel" scheme="https://calmchen.com/tags/laravel/"/>
+    
+    <category term="cms" scheme="https://calmchen.com/tags/cms/"/>
+    
+    <category term="重构" scheme="https://calmchen.com/tags/%E9%87%8D%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac Python版本</title>
@@ -661,42 +695,6 @@
     
     
     <category term="Git" scheme="https://calmchen.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【JAVA】环境配置</title>
-    <link href="https://calmchen.com/posts/817a1f94.html"/>
-    <id>https://calmchen.com/posts/817a1f94.html</id>
-    <published>2022-05-16T03:34:52.000Z</published>
-    <updated>2022-08-08T07:48:06.802Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;前期准备&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1、Jdk安装&quot;&gt;&lt;a href=&quot;#1、Jdk安装&quot; class=&quot;headerlink&quot; title=&quot;1、Jdk安装&quot;&gt;&lt;/a&gt;1、Jdk安装&lt;/h2&gt;&lt;h3</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://calmchen.com/categories/Java/"/>
-    
-    <category term="Jdk" scheme="https://calmchen.com/categories/Java/Jdk/"/>
-    
-    <category term="SpringCloud" scheme="https://calmchen.com/categories/Java/Jdk/SpringCloud/"/>
-    
-    
-    <category term="Java" scheme="https://calmchen.com/tags/Java/"/>
-    
-    <category term="Jdk" scheme="https://calmchen.com/tags/Jdk/"/>
-    
-    <category term="SpringCloud" scheme="https://calmchen.com/tags/SpringCloud/"/>
     
   </entry>
   
