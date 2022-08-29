@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>Hexo添加百度收录</title>
+      <link href="/posts/9e653c1e.html"/>
+      <url>/posts/9e653c1e.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Laravel的分库分表解决方案</title>
+      <link href="/posts/da628193.html"/>
+      <url>/posts/da628193.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Typora </tag>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LinCMS-Laravel8</title>
       <link href="/posts/a23a1b48.html"/>
       <url>/posts/a23a1b48.html</url>
@@ -630,9 +684,9 @@
       
         <tags>
             
-            <tag> swoole </tag>
-            
             <tag> PHP </tag>
+            
+            <tag> swoole </tag>
             
             <tag> Mac </tag>
             

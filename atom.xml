@@ -6,7 +6,7 @@
   <link href="https://calmchen.com/atom.xml" rel="self"/>
   
   <link href="https://calmchen.com/"/>
-  <updated>2022-08-29T01:50:13.599Z</updated>
+  <updated>2022-08-29T01:59:54.721Z</updated>
   <id>https://calmchen.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo添加百度收录</title>
+    <link href="https://calmchen.com/posts/9e653c1e.html"/>
+    <id>https://calmchen.com/posts/9e653c1e.html</id>
+    <published>2022-08-29T01:59:54.000Z</published>
+    <updated>2022-08-29T01:59:54.721Z</updated>
+    
+    
+    
+    
+    <category term="Markdown" scheme="https://calmchen.com/categories/Markdown/"/>
+    
+    
+    <category term="Typora" scheme="https://calmchen.com/tags/Typora/"/>
+    
+    <category term="Markdown" scheme="https://calmchen.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel的分库分表解决方案</title>
+    <link href="https://calmchen.com/posts/da628193.html"/>
+    <id>https://calmchen.com/posts/da628193.html</id>
+    <published>2022-08-29T01:51:51.000Z</published>
+    <updated>2022-08-29T01:51:51.830Z</updated>
+    
+    
+    
+    
+    <category term="Markdown" scheme="https://calmchen.com/categories/Markdown/"/>
+    
+    
+    <category term="Typora" scheme="https://calmchen.com/tags/Typora/"/>
+    
+    <category term="Markdown" scheme="https://calmchen.com/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>LinCMS-Laravel8</title>
@@ -637,64 +675,6 @@
     <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
     
     <category term="Hyperf" scheme="https://calmchen.com/tags/Hyperf/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Mac编译安装PHP扩展】</title>
-    <link href="https://calmchen.com/posts/3fc5bd43.html"/>
-    <id>https://calmchen.com/posts/3fc5bd43.html</id>
-    <published>2022-07-11T07:29:17.000Z</published>
-    <updated>2022-07-14T05:56:21.757Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Mac安装PHP扩展&quot;&gt;&lt;a href=&quot;#Mac安装PHP扩展&quot; class=&quot;headerlink&quot; title=&quot;Mac安装PHP扩展&quot;&gt;&lt;/a&gt;Mac安装PHP扩展&lt;/h1&gt;&lt;h2 id=&quot;查看php-ini位置&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Mac" scheme="https://calmchen.com/categories/Mac/"/>
-    
-    <category term="PHP" scheme="https://calmchen.com/categories/Mac/PHP/"/>
-    
-    <category term="swoole" scheme="https://calmchen.com/categories/Mac/PHP/swoole/"/>
-    
-    
-    <category term="swoole" scheme="https://calmchen.com/tags/swoole/"/>
-    
-    <category term="PHP" scheme="https://calmchen.com/tags/PHP/"/>
-    
-    <category term="Mac" scheme="https://calmchen.com/tags/Mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Git不要只会pull和push，试试这5条提高效率的命令】</title>
-    <link href="https://calmchen.com/posts/946f16e6.html"/>
-    <id>https://calmchen.com/posts/946f16e6.html</id>
-    <published>2022-06-23T12:09:09.000Z</published>
-    <updated>2022-06-23T12:30:51.588Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Git不要只会pull和push，试试这5条提高效率的命令&quot;&gt;&lt;a href=&quot;#Git不要只会pull和push，试试这5条提高效率的命令&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Git" scheme="https://calmchen.com/categories/Git/"/>
-    
-    
-    <category term="Git" scheme="https://calmchen.com/tags/Git/"/>
     
   </entry>
   
