@@ -4,7 +4,16 @@
   <url>
     <loc>https://calmchen.com/posts/a23a1b48.html</loc>
     
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-08-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://calmchen.com/posts/c8bf02f0.html</loc>
+    
+    <lastmod>2022-08-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -149,15 +158,6 @@
     <loc>https://calmchen.com/posts/86e797f5.html</loc>
     
     <lastmod>2022-07-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://calmchen.com/posts/c8bf02f0.html</loc>
-    
-    <lastmod>2022-07-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -364,7 +364,7 @@
 
   <url>
     <loc>https://calmchen.com/</loc>
-    <lastmod>2022-08-26</lastmod>
+    <lastmod>2022-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
