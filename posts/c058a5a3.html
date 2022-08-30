@@ -16,25 +16,26 @@
   <meta name="author" content="Calm">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo添加百度收录 1、查看网站是否收录百度输入site:域名查看我们的网站是否收录 2、安装 sitemap为我们的hexo博客安装相关支持的包。这两个包分别为：  hexo-generator-baidu-sitemap 【该包用于支持百度搜索引擎】 hexo-generator-sitemap 【该包用于支持Google搜索引擎】  12npm install hexo-generator">
+    <meta name="description" content="Mysql事务、锁和MVCC” 1、事务1.1目的保证数据最终的一致性 1.2特性ACID原子性（Atomicity）要么同时成功，要么同时失败，底层依赖undo log实现隔离性（Isolation）事务之间需要有隔离，互不影响。Mysql提供四种隔离级别，隔离级别底层实现是锁 四种隔离级别：  read uncommit (读未提交) read commit (读已提交) repeatable">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo添加百度收录">
-<meta property="og:url" content="https://calmchen.com/posts/9e653c1e.html">
+<meta property="og:title" content="Mysql事务、锁和MVCC">
+<meta property="og:url" content="https://calmchen.com/posts/c058a5a3.html">
 <meta property="og:site_name" content="成小琴快跑">
-<meta property="og:description" content="Hexo添加百度收录 1、查看网站是否收录百度输入site:域名查看我们的网站是否收录 2、安装 sitemap为我们的hexo博客安装相关支持的包。这两个包分别为：  hexo-generator-baidu-sitemap 【该包用于支持百度搜索引擎】 hexo-generator-sitemap 【该包用于支持Google搜索引擎】  12npm install hexo-generator">
+<meta property="og:description" content="Mysql事务、锁和MVCC” 1、事务1.1目的保证数据最终的一致性 1.2特性ACID原子性（Atomicity）要么同时成功，要么同时失败，底层依赖undo log实现隔离性（Isolation）事务之间需要有隔离，互不影响。Mysql提供四种隔离级别，隔离级别底层实现是锁 四种隔离级别：  read uncommit (读未提交) read commit (读已提交) repeatable">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-29T01:59:54.000Z">
-<meta property="article:modified_time" content="2022-08-29T06:04:11.276Z">
+<meta property="article:published_time" content="2022-08-30T09:30:32.000Z">
+<meta property="article:modified_time" content="2022-08-30T09:50:07.378Z">
 <meta property="article:author" content="Calm">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="百度收录">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="事务">
+<meta property="article:tag" content="MVCC">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo添加百度收录 - 成小琴快跑</title>
+  <title>Mysql事务、锁和MVCC - 成小琴快跑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo添加百度收录"></span>
+            <span id="subtitle" data-typed-text="Mysql事务、锁和MVCC"></span>
           
         </div>
 
@@ -228,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-29 09:59" pubdate>
-          2022年8月29日 上午
+        <time datetime="2022-08-30 17:30" pubdate>
+          2022年8月30日 下午
         </time>
       </span>
     
@@ -240,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          828 字
         
       </span>
     
@@ -251,7 +252,7 @@
         
         
         
-          12 分钟
+          7 分钟
         
       </span>
     
@@ -297,12 +298,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo添加百度收录</h1>
+            <h1 style="display: none">Mysql事务、锁和MVCC</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -310,30 +311,38 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo添加百度收录"><a href="#Hexo添加百度收录" class="headerlink" title="Hexo添加百度收录"></a>Hexo添加百度收录</h1><hr>
-<h2 id="1、查看网站是否收录"><a href="#1、查看网站是否收录" class="headerlink" title="1、查看网站是否收录"></a>1、查看网站是否收录</h2><p>百度输入<code>site:域名</code>查看我们的网站是否收录</p>
-<h2 id="2、安装-sitemap"><a href="#2、安装-sitemap" class="headerlink" title="2、安装 sitemap"></a>2、安装 sitemap</h2><p>为我们的hexo博客安装相关支持的包。这两个包分别为：</p>
+                <h1 id="Mysql事务、锁和MVCC”"><a href="#Mysql事务、锁和MVCC”" class="headerlink" title="Mysql事务、锁和MVCC”"></a>Mysql事务、锁和MVCC”</h1><hr>
+<h2 id="1、事务"><a href="#1、事务" class="headerlink" title="1、事务"></a>1、事务</h2><h3 id="1-1目的"><a href="#1-1目的" class="headerlink" title="1.1目的"></a>1.1目的</h3><p>保证数据最终的一致性</p>
+<h3 id="1-2特性"><a href="#1-2特性" class="headerlink" title="1.2特性"></a>1.2特性</h3><p>ACID<br><strong>原子性（Atomicity）</strong><br>要么同时成功，要么同时失败，底层依赖<code>undo log</code>实现<br><strong>隔离性（Isolation）</strong><br>事务之间需要有隔离，互不影响。Mysql提供<strong>四种隔离级别</strong>，隔离级别底层实现是<code>锁</code></p>
+<p>四种隔离级别：</p>
 <ul>
-<li><code>hexo-generator-baidu-sitemap</code> 【该包用于支持百度搜索引擎】</li>
-<li><code>hexo-generator-sitemap</code> 【该包用于支持Google搜索引擎】</li>
+<li>read uncommit (读未提交)</li>
+<li>read commit (读已提交)</li>
+<li>repeatable read (可重复复读)</li>
+<li>serializable (串行)</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save<br>npm install hexo-generator-baidu-sitemap --save<br></code></pre></td></tr></table></figure>
-
-<h2 id="3、hexo-配置文件"><a href="#3、hexo-配置文件" class="headerlink" title="3、hexo 配置文件"></a>3、hexo 配置文件</h2><p>根目录_config.yaml添加如下的配置（注意每行的空格）生成对应xml文件</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># sitemap</span><br><span class="hljs-attr">sitemap:</span><br> <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br> <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br><br><span class="hljs-attr">url:</span> <span class="hljs-string">https://calmchen.com</span><br><span class="hljs-comment">#permalink: :year/:month/:day/:title/</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:abbrlink.html</span><br><span class="hljs-attr">permalink_defaults:</span><br></code></pre></td></tr></table></figure>
-<h2 id="4、添加蜘蛛协议-robots-txt-的文件"><a href="#4、添加蜘蛛协议-robots-txt-的文件" class="headerlink" title="4、添加蜘蛛协议 robots.txt 的文件"></a>4、添加蜘蛛协议 <code>robots.txt</code> 的文件</h2><p>博客根目录中的 <code>source</code> 文件夹下，添加蜘蛛协议 <code>robots.txt</code> 的文件</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs text">User-agent: *<br>Allow: /<br>Allow: /categories/<br>Allow: /tags/<br>Allow: /archives/<br>Allow: /about/<br><br>Disallow: /vendors/<br>Disallow: /js/<br>Disallow: /css/<br>Disallow: /fonts/<br>Disallow: /vendors/<br>Disallow: /fancybox/<br><br># 记得替换成你的域名<br>Sitemap: http://yoursite.com/sitemap.xml<br>Sitemap: http://yoursite.com/baidusitemap.xml主动推送<br></code></pre></td></tr></table></figure>
-
-<h2 id="5、主动推送"><a href="#5、主动推送" class="headerlink" title="5、主动推送"></a>5、主动推送</h2><p><strong>1、安装插件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 会生成baidu_urls.txt目录</span><br>npm install hexo-baidu-url-submit --save<br></code></pre></td></tr></table></figure>
-
-<p><strong>2、配置文件</strong><br>根目录站点配置文件<code>_config.yaml</code>中新增如下字段<br>域名和秘钥可以在<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/linksubmit/index">站长工具平台</a> 的连接提交中的接口调用地址中找到，即对应<code>host</code>与<code>token</code>后面的字段</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baidu_url_submit:</span><br>  <span class="hljs-attr">count:</span> <span class="hljs-number">100</span> <span class="hljs-comment"># 提交最新的一个链接</span><br>  <span class="hljs-attr">host:</span> <span class="hljs-string">www.bkduck.cn</span> <span class="hljs-comment"># 在百度站长平台中注册的域名</span><br>  <span class="hljs-attr">token:</span> <span class="hljs-string">lY..........Fk</span> <span class="hljs-comment"># 请注意这是您的秘钥，所以请不要把博客源代码发布在公众仓库里!</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidu_urls.txt</span> <span class="hljs-comment"># 文本文档的地址，新链接会保存在此文本文档里</span><br></code></pre></td></tr></table></figure>
-
-<p>**3、修改deploy配置<br>根目录<code>_config.yaml</code>, 修改<code>deploy</code>配置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment"># 使用hexo deploy指令后，自动推送给百度</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">&#x27;baidu_url_submitter&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="6、百度收录新建站点"><a href="#6、百度收录新建站点" class="headerlink" title="6、百度收录新建站点"></a>6、百度收录新建站点</h2><p>输入站点 -&gt; 站点属性（选择信息技术即可）-&gt; 验证网站（按提示选择CNAM验证即可）</p>
+<p><strong>持久性（Durability）</strong><br>一旦提交事务，数据永久记录。Mysql底层使用<code>redo log</code>来持久化数据。</p>
+<p><strong>一致性（Consistency）</strong><br>一致性是事务的目的，需要通过应用程序来保证一致性<br>「隔离性」「原子性」「持久性」均是为了保障「一致性」的手段</p>
+<h2 id="2、锁"><a href="#2、锁" class="headerlink" title="2、锁"></a>2、锁</h2><p>在 <strong>InnoDB</strong> 引擎下，按锁的粒度分类，可以简单分为<code>行锁</code>和<code>表锁</code></p>
+<ul>
+<li>命中索引是行锁，不命中是表锁</li>
+<li>行锁实际上是作用在索引之上的</li>
+<li>行锁又可以简单分为<strong>读锁</strong>（共享锁、S 锁）和<strong>写锁</strong>（排它锁、X 锁）</li>
+<li>读锁是共享的，多个事务可以同时读取同一个资源，但不允许其他事务修改</li>
+<li>写锁是排他的，写锁会阻塞其他的写锁和读锁</li>
+</ul>
+<h2 id="3、MVCC"><a href="#3、MVCC" class="headerlink" title="3、MVCC"></a>3、MVCC</h2><p><strong>MVCC</strong> 的主要是通过 <code>read view</code> 和 <code>undo log</code> 来实现的<br>待整理…</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><ul>
+<li>事务为了保证数据的最终一致性</li>
+<li>事务有四大特性，分别是原子性、一致性、隔离性、持久性</li>
+<li>原子性由 undo log 保证</li>
+<li>持久性由 redo log 保证</li>
+<li>隔离性由数据库隔离级别供我们选择，分别有 read uncommit,read commit,repeatable read,serializable</li>
+<li>一致性是事务的目的，一致性由应用程序来保证</li>
+<li>事务并发会存在各种问题，分别有脏读、重复读、幻读问题。上面的不同隔离级别可以解决掉由于并发事务所造成的问题，而隔离级别实际上就是由 MySQL 锁来实现的</li>
+<li>频繁加锁会导致数据库性能低下，引入了 MVCC 多版本控制来实现读写不阻塞，提高数据库性能</li>
+<li>MVCC 原理即通过 read view 以及 undo log 来实现</li>
+</ul>
 
                 
               </div>
@@ -352,7 +361,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Mysql/" class="category-chain-item">Mysql</a>
   
   
 
@@ -367,9 +376,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/mysql/">#mysql</a>
       
-        <a href="/tags/%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/">#百度收录</a>
+        <a href="/tags/%E4%BA%8B%E5%8A%A1/">#事务</a>
+      
+        <a href="/tags/MVCC/">#MVCC</a>
       
     </div>
   
@@ -381,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo添加百度收录</div>
-      <div>https://calmchen.com/posts/9e653c1e.html</div>
+      <div>Mysql事务、锁和MVCC</div>
+      <div>https://calmchen.com/posts/c058a5a3.html</div>
     </div>
     <div class="license-meta">
       
@@ -394,13 +405,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月29日</div>
+          <div>2022年8月30日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年8月29日</div>
+          <div>2022年8月30日</div>
         </div>
       
       
@@ -431,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/1079e055.html" title="无限极分类设计 - ClosureTable">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">无限极分类设计 - ClosureTable</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/da628193.html" title="Laravel的分库分表解决方案">
-                        <span class="hidden-mobile">Laravel的分库分表解决方案</span>
+                      <a href="/posts/71efa875.html" title="12个Mysql慢查询原因整理">
+                        <span class="hidden-mobile">12个Mysql慢查询原因整理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

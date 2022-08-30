@@ -16,25 +16,25 @@
   <meta name="author" content="Calm">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Hexo添加百度收录 1、查看网站是否收录百度输入site:域名查看我们的网站是否收录 2、安装 sitemap为我们的hexo博客安装相关支持的包。这两个包分别为：  hexo-generator-baidu-sitemap 【该包用于支持百度搜索引擎】 hexo-generator-sitemap 【该包用于支持Google搜索引擎】  12npm install hexo-generator">
+    <meta name="description" content="12个Mysql慢查询原因整理  学会用 explain 分析explain select * from user_info where name &#x3D;’xxx’ ;平时我们用 explain 分析 SQL 的时候，如果 type&#x3D;range, 要注意一下，可能因为数据量问题，导致索引无效  1、SQL没加索引在 where 的条件列，建立索引，尽量避免全表扫描 2、SQL索引不生效2.1 隐式的类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo添加百度收录">
-<meta property="og:url" content="https://calmchen.com/posts/9e653c1e.html">
+<meta property="og:title" content="12个Mysql慢查询原因整理">
+<meta property="og:url" content="https://calmchen.com/posts/71efa875.html">
 <meta property="og:site_name" content="成小琴快跑">
-<meta property="og:description" content="Hexo添加百度收录 1、查看网站是否收录百度输入site:域名查看我们的网站是否收录 2、安装 sitemap为我们的hexo博客安装相关支持的包。这两个包分别为：  hexo-generator-baidu-sitemap 【该包用于支持百度搜索引擎】 hexo-generator-sitemap 【该包用于支持Google搜索引擎】  12npm install hexo-generator">
+<meta property="og:description" content="12个Mysql慢查询原因整理  学会用 explain 分析explain select * from user_info where name &#x3D;’xxx’ ;平时我们用 explain 分析 SQL 的时候，如果 type&#x3D;range, 要注意一下，可能因为数据量问题，导致索引无效  1、SQL没加索引在 where 的条件列，建立索引，尽量避免全表扫描 2、SQL索引不生效2.1 隐式的类">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-29T01:59:54.000Z">
-<meta property="article:modified_time" content="2022-08-29T06:04:11.276Z">
+<meta property="article:published_time" content="2022-08-30T08:39:54.000Z">
+<meta property="article:modified_time" content="2022-08-30T09:28:59.810Z">
 <meta property="article:author" content="Calm">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="百度收录">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="索引">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Hexo添加百度收录 - 成小琴快跑</title>
+  <title>12个Mysql慢查询原因整理 - 成小琴快跑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo添加百度收录"></span>
+            <span id="subtitle" data-typed-text="12个Mysql慢查询原因整理"></span>
           
         </div>
 
@@ -228,8 +228,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-29 09:59" pubdate>
-          2022年8月29日 上午
+        <time datetime="2022-08-30 16:39" pubdate>
+          2022年8月30日 下午
         </time>
       </span>
     
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          2.4k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          12 分钟
+          20 分钟
         
       </span>
     
@@ -297,12 +297,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo添加百度收录</h1>
+            <h1 style="display: none">12个Mysql慢查询原因整理</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：1 天前
+                    本文最后更新于：22 分钟前
                   
                 
               </p>
@@ -310,30 +310,80 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Hexo添加百度收录"><a href="#Hexo添加百度收录" class="headerlink" title="Hexo添加百度收录"></a>Hexo添加百度收录</h1><hr>
-<h2 id="1、查看网站是否收录"><a href="#1、查看网站是否收录" class="headerlink" title="1、查看网站是否收录"></a>1、查看网站是否收录</h2><p>百度输入<code>site:域名</code>查看我们的网站是否收录</p>
-<h2 id="2、安装-sitemap"><a href="#2、安装-sitemap" class="headerlink" title="2、安装 sitemap"></a>2、安装 sitemap</h2><p>为我们的hexo博客安装相关支持的包。这两个包分别为：</p>
+                <h1 id="12个Mysql慢查询原因整理"><a href="#12个Mysql慢查询原因整理" class="headerlink" title="12个Mysql慢查询原因整理"></a>12个Mysql慢查询原因整理</h1><hr>
+<blockquote>
+<p>学会用 <code>explain</code> 分析<br>explain select * from user_info where name =’xxx’ ;<br>平时我们用 explain 分析 SQL 的时候，如果 type=range, 要注意一下，可能因为数据量问题，导致索引无效</p>
+</blockquote>
+<h2 id="1、SQL没加索引"><a href="#1、SQL没加索引" class="headerlink" title="1、SQL没加索引"></a>1、SQL没加索引</h2><p>在 <code>where</code> 的条件列，<strong>建立索引</strong>，尽量避免全表扫描</p>
+<h2 id="2、SQL索引不生效"><a href="#2、SQL索引不生效" class="headerlink" title="2、SQL索引不生效"></a>2、SQL索引不生效</h2><p><strong>2.1 隐式的类型转换，索引失效</strong><br>查询语句不加<code>单引号</code>时，是<strong>字符串</strong>跟<strong>数字</strong>的比较，它们类型不匹配，<code>MySQL</code> 会做<strong>隐式的类型转换</strong>，把它们转换为浮点数再做比较</p>
+<p><strong>2.2 查询条件包含 or，可能导致索引失效</strong><br>遇到不走索引的时候，考虑拆开两条 SQL</p>
+<p><strong>2.3 like 通配符可能导致索引失效</strong><br>并不是用了 <code>like</code> 通配符，索引一定会失效，而是 <code>like</code> 查询是以 <code>%</code> 开头，才会导致索引失效。<br>优化：</p>
 <ul>
-<li><code>hexo-generator-baidu-sitemap</code> 【该包用于支持百度搜索引擎】</li>
-<li><code>hexo-generator-sitemap</code> 【该包用于支持Google搜索引擎】</li>
+<li>使用覆盖索引</li>
+<li>把 <code>%</code> 放后面</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-generator-sitemap --save<br>npm install hexo-generator-baidu-sitemap --save<br></code></pre></td></tr></table></figure>
-
-<h2 id="3、hexo-配置文件"><a href="#3、hexo-配置文件" class="headerlink" title="3、hexo 配置文件"></a>3、hexo 配置文件</h2><p>根目录_config.yaml添加如下的配置（注意每行的空格）生成对应xml文件</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># sitemap</span><br><span class="hljs-attr">sitemap:</span><br> <span class="hljs-attr">path:</span> <span class="hljs-string">sitemap.xml</span><br><span class="hljs-attr">baidusitemap:</span><br> <span class="hljs-attr">path:</span> <span class="hljs-string">baidusitemap.xml</span><br><br><span class="hljs-attr">url:</span> <span class="hljs-string">https://calmchen.com</span><br><span class="hljs-comment">#permalink: :year/:month/:day/:title/</span><br><span class="hljs-attr">permalink:</span> <span class="hljs-string">posts/:abbrlink.html</span><br><span class="hljs-attr">permalink_defaults:</span><br></code></pre></td></tr></table></figure>
-<h2 id="4、添加蜘蛛协议-robots-txt-的文件"><a href="#4、添加蜘蛛协议-robots-txt-的文件" class="headerlink" title="4、添加蜘蛛协议 robots.txt 的文件"></a>4、添加蜘蛛协议 <code>robots.txt</code> 的文件</h2><p>博客根目录中的 <code>source</code> 文件夹下，添加蜘蛛协议 <code>robots.txt</code> 的文件</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs text">User-agent: *<br>Allow: /<br>Allow: /categories/<br>Allow: /tags/<br>Allow: /archives/<br>Allow: /about/<br><br>Disallow: /vendors/<br>Disallow: /js/<br>Disallow: /css/<br>Disallow: /fonts/<br>Disallow: /vendors/<br>Disallow: /fancybox/<br><br># 记得替换成你的域名<br>Sitemap: http://yoursite.com/sitemap.xml<br>Sitemap: http://yoursite.com/baidusitemap.xml主动推送<br></code></pre></td></tr></table></figure>
-
-<h2 id="5、主动推送"><a href="#5、主动推送" class="headerlink" title="5、主动推送"></a>5、主动推送</h2><p><strong>1、安装插件</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 会生成baidu_urls.txt目录</span><br>npm install hexo-baidu-url-submit --save<br></code></pre></td></tr></table></figure>
-
-<p><strong>2、配置文件</strong><br>根目录站点配置文件<code>_config.yaml</code>中新增如下字段<br>域名和秘钥可以在<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/linksubmit/index">站长工具平台</a> 的连接提交中的接口调用地址中找到，即对应<code>host</code>与<code>token</code>后面的字段</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">baidu_url_submit:</span><br>  <span class="hljs-attr">count:</span> <span class="hljs-number">100</span> <span class="hljs-comment"># 提交最新的一个链接</span><br>  <span class="hljs-attr">host:</span> <span class="hljs-string">www.bkduck.cn</span> <span class="hljs-comment"># 在百度站长平台中注册的域名</span><br>  <span class="hljs-attr">token:</span> <span class="hljs-string">lY..........Fk</span> <span class="hljs-comment"># 请注意这是您的秘钥，所以请不要把博客源代码发布在公众仓库里!</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">baidu_urls.txt</span> <span class="hljs-comment"># 文本文档的地址，新链接会保存在此文本文档里</span><br></code></pre></td></tr></table></figure>
-
-<p>**3、修改deploy配置<br>根目录<code>_config.yaml</code>, 修改<code>deploy</code>配置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment"># 使用hexo deploy指令后，自动推送给百度</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="hljs-attr">deploy:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">type:</span> <span class="hljs-string">&#x27;baidu_url_submitter&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="6、百度收录新建站点"><a href="#6、百度收录新建站点" class="headerlink" title="6、百度收录新建站点"></a>6、百度收录新建站点</h2><p>输入站点 -&gt; 站点属性（选择信息技术即可）-&gt; 验证网站（按提示选择CNAM验证即可）</p>
+<p><strong>2.4 查询条件不满足联合索引的最左匹配原则</strong><br>查询条件列 <code>name</code> 不是联合索引 <code>idx_userid_name</code> 中的第一个列，索引不生效<br>在联合索引中，查询条件满足<strong>最左匹配原则</strong>时，索引才正常生效。</p>
+<p><strong>2.5 在索引列上使用 mysql 的内置函数</strong></p>
+<p>优化<br>可以把<strong>内置函数的逻辑转移到右边</strong></p>
+<p><strong>2.6 对索引进行列运算（如，+、-、*、/）, 索引不生效</strong><br>不可以对索引列进行运算，可以在代码处理好，再传参进去。</p>
+<p><strong>2.7 索引字段上使用（！= 或者 &lt; &gt;），索引可能失效</strong></p>
+<p><strong>2.8 索引字段上使用 is null， is not null，索引可能失效</strong><br>单个<code>not null</code> 生效  多个<code>not null</code>用<code>or</code>连接会失效</p>
+<p><strong>2.9 左右连接，关联的字段编码格式不一样</strong><br>做表关联时，注意一下<strong>关联字段的编码问题</strong></p>
+<p><strong>2.10 优化器选错了索引</strong></p>
+<h2 id="3、limit-深分页问题"><a href="#3、limit-深分页问题" class="headerlink" title="3、limit 深分页问题"></a>3、limit 深分页问题</h2><p><strong>原因:</strong></p>
+<ul>
+<li><code>limit</code> 语句会先扫描 <code>offset+n</code> 行，然后再丢弃掉前 <code>offset</code> 行，返回后 <code>n</code> 行数据。也就是说 <code>limit 100000,10</code>，就会扫描 <code>100010</code> 行，而 <code>limit 0,10</code>，只扫描 <code>10</code> 行。</li>
+<li><code>limit 100000,10</code> 扫描更多的行数，也意味着回表更多的次数。</li>
+</ul>
+<p><strong>优化:</strong><br>可以通过减少回表次数来优化。一般有<strong>标签记录法</strong>和<strong>延迟关联法</strong></p>
+<h2 id="4、单表数据量太大"><a href="#4、单表数据量太大" class="headerlink" title="4、单表数据量太大"></a>4、单表数据量太大</h2><p><strong>原因</strong><br>因为维护索引的 <code>B+</code> 树结构层级变得更高了，查询一条数据时，需要经历的磁盘 <strong>IO</strong> 变多，因此查询性能变慢</p>
+<p><strong>分析</strong><br>InnoDB 存储引擎最小储存单元是页，一页大小就是 <code>16k</code></p>
+<ul>
+<li><p>如果一行记录的数据大小为 1k，那么单个叶子节点可以存的记录数 =16k/1k =16.</p>
+</li>
+<li><p>非叶子节点内存放多少指针呢？我们假设主键 ID 为 bigint 类型，长度为 8 字节 (面试官问你 int 类型，一个 int 就是 32 位，4 字节)，而指针大小在 InnoDB 源码中设置为 6 字节，所以就是 8+6=14 字节，16k/14B =16*1024B/14B = 1170</p>
+</li>
+</ul>
+<p>一棵高度为 2 的 B + 树，能存放 <code>1170 * 16=18720</code> 条这样的数据记录<br>一棵高度为 3 的 B + 树，能存放 <code>1170 *1170 *16 =21902400</code>可以存放两千万左右的记录。<br>B + 树高度一般为 1-3 层，已经满足千万级别的数据存储</p>
+<p><strong>优化</strong><br>一般超过千万级别，我们可以考虑<strong>分库分表</strong>了。</p>
+<p>分库分表可能导致的问题：</p>
+<ul>
+<li>事务问题</li>
+<li>跨库问题</li>
+<li>排序问题 </li>
+<li>分页问题 </li>
+<li>分布式 ID</li>
+<li>方案：<br>1、历史数据归档<br>2、考虑垂直、水平分库分表。水平分库分表策略的话，<strong>range 范围</strong>、<strong>hash 取模</strong>、<strong>range+hash 取模混合</strong>等等</li>
+</ul>
+<h2 id="5、-join-或者子查询过多"><a href="#5、-join-或者子查询过多" class="headerlink" title="5、 join 或者子查询过多"></a>5、 join 或者子查询过多</h2><p>业务需要的话，关联 2~3 个表是可以接受的，但是<code>关联的字段</code>需要加索引哈。如果需要关联更多的表，建议从代码层面进行拆分，<br>在业务层先查询一张表的数据，然后以关联字段作为条件查询关联表形成 <code>map</code>，然后在业务层进行数据的拼装</p>
+<h2 id="6、in-元素过多"><a href="#6、in-元素过多" class="headerlink" title="6、in 元素过多"></a>6、in 元素过多</h2><p><code>in</code> 元素一般建议不要超过 <code>500</code> 个，如果超过了，建议分组，每次 <code>500</code> 一组进行<br>分批进行，每批 500 个</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">select user_id,name from user where user_id in (1,2,3...500);<br></code></pre></td></tr></table></figure>
+<p>如果传参的 ids 太多，还可以做个参数校验</p>
+<h2 id="7、数据库在刷脏页"><a href="#7、数据库在刷脏页" class="headerlink" title="7、数据库在刷脏页"></a>7、数据库在刷脏页</h2><p>当内存数据页跟磁盘数据页内容不一致的时候，我们称这个内存页为 “<strong>脏页</strong>”。内存数据写入到磁盘后，内存和磁盘上的数据页的内容就一致了，称为 “<strong>干净页</strong>”。一般有更新 SQL 才可能会导致脏页<br>深入了解分析</p>
+<h2 id="8、order-by-文件排序"><a href="#8、order-by-文件排序" class="headerlink" title="8、order by 文件排序"></a>8、order by 文件排序</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg3NzU5NTIwNg==&mid=2247490571&idx=1&sn=e8638573ec8d720fd25da5b2b0d90ed2&scene=21#wechat_redirect">看一遍就理解：order by 详解</a></p>
+<h2 id="9、-拿不到锁"><a href="#9、-拿不到锁" class="headerlink" title="9、 拿不到锁"></a>9、 拿不到锁</h2><p>表被锁住了<br>可以用 <code>show processlist</code> 命令，看看当前语句处于什么状态</p>
+<h2 id="10、delete-in-子查询不走索引！"><a href="#10、delete-in-子查询不走索引！" class="headerlink" title="10、delete + in 子查询不走索引！"></a>10、delete + in 子查询不走索引！</h2><p><strong>MySQL</strong> 对 <code>select in</code> 子查询做了优化，把子查询改成 <code>join</code> 的方式，所以可以走索引，对于 <code>delete in</code> 子查询，<strong>MySQL</strong> 却没有对它做这个优化</p>
+<h2 id="11、group-by-使用临时表"><a href="#11、group-by-使用临时表" class="headerlink" title="11、group by 使用临时表"></a>11、group by 使用临时表</h2><p><code>group by</code> 一般用于分组统计，它表达的逻辑就是根据<strong>一定的规则</strong>，<strong>进行分组</strong>。日常开发中，我们使用得比较频繁。如果不注意，很容易产生慢 SQL</p>
+<p><strong>优化</strong></p>
+<ul>
+<li>group by 后面的字段加索引</li>
+<li>order by null 不用排序</li>
+<li>尽量只使用内存临时表</li>
+<li>使用 SQL_BIG_RESULT</li>
+</ul>
+<p>参考：[看一遍就理解：group by 详解](看一遍就理解：group by 详解)</p>
+<h2 id="12、系统硬件或网络资源"><a href="#12、系统硬件或网络资源" class="headerlink" title="12、系统硬件或网络资源"></a>12、系统硬件或网络资源</h2><ul>
+<li>如果数据库服务器内存、硬件资源，或者网络资源配置不是很好，这时候可以升级配置。</li>
+<li>如果数据库压力本身很大，比如高并发场景下，大量请求到数据库来，数据库服务器 <code>CPU</code> 占用很高或者 <code>IO利用率</code>很高，这种情况下所有语句的执行都有可能变慢</li>
+</ul>
+<h2 id="13、其他"><a href="#13、其他" class="headerlink" title="13、其他"></a>13、其他</h2><p>如果测试环境数据库的一些参数配置，和生产环境参数配置不一致的话，也容易产生慢 <strong>SQL</strong> 哈。之前见过一个慢 SQL 的生产案例，就是测试环境用了 <code>index merge</code>，所以查看 <strong>explain</strong> 执行计划时，是可以走索引的，但是到了生产，却全表扫描，最后排查发现是生产环境配置把 <code>index merge</code> 关闭</p>
+<blockquote>
+<p>转自:</p>
+<ul>
+<li>原文作者：PHPer技术栈;</li>
+<li>转自链接：<a target="_blank" rel="noopener" href="https://learnku.com/articles/68200#edce4a">https://learnku.com/articles/68200#edce4a</a></li>
+</ul>
+</blockquote>
 
                 
               </div>
@@ -352,7 +402,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Hexo/" class="category-chain-item">Hexo</a>
+  <a href="/categories/Mysql/" class="category-chain-item">Mysql</a>
   
   
 
@@ -367,9 +417,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/">#hexo</a>
+        <a href="/tags/mysql/">#mysql</a>
       
-        <a href="/tags/%E7%99%BE%E5%BA%A6%E6%94%B6%E5%BD%95/">#百度收录</a>
+        <a href="/tags/%E7%B4%A2%E5%BC%95/">#索引</a>
       
     </div>
   
@@ -381,8 +431,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo添加百度收录</div>
-      <div>https://calmchen.com/posts/9e653c1e.html</div>
+      <div>12个Mysql慢查询原因整理</div>
+      <div>https://calmchen.com/posts/71efa875.html</div>
     </div>
     <div class="license-meta">
       
@@ -394,13 +444,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年8月29日</div>
+          <div>2022年8月30日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年8月29日</div>
+          <div>2022年8月30日</div>
         </div>
       
       
@@ -431,9 +481,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/1079e055.html" title="无限极分类设计 - ClosureTable">
+                      <a href="/posts/c058a5a3.html" title="Mysql事务、锁和MVCC">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">无限极分类设计 - ClosureTable</span>
+                        <span class="hidden-mobile">Mysql事务、锁和MVCC</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -441,8 +491,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/da628193.html" title="Laravel的分库分表解决方案">
-                        <span class="hidden-mobile">Laravel的分库分表解决方案</span>
+                      <a href="/posts/1079e055.html" title="无限极分类设计 - ClosureTable">
+                        <span class="hidden-mobile">无限极分类设计 - ClosureTable</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
