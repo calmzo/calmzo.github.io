@@ -16,26 +16,26 @@
   <meta name="author" content="Calm">
   <meta name="keywords" content="">
   
-    <meta name="description" content="原文地址：PHP类和工具收集    PHP类和工具收集说明这是一个收集php class,以及常用的工具,演示例子等. 功能简介 adminer 这是一个数据库管理工具,单文件,非常好用支持mysql,sqlite,在没有安装phpmyadmin情况下最好的选择;使用后要删除; aliyun 阿里云短信发送演示 baidu 百度翻译演示,百度身份证,银行卡,图片,分词识别 code 验证码类">
+    <meta name="description" content="Laravel 创建自定义的 artisan make 命令  通过 artisan make:repository 命令自动创建类文件而不是都每次手动创建  1、创建命令类在 app\Console\Commands 文件夹下创建 RepositoryMakeCommand.php 文件 123456789101112131415161718192021222324252627282930313">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP类和工具收集">
-<meta property="og:url" content="https://calmchen.com/posts/d9c1a184.html">
+<meta property="og:title" content="Laravel 创建自定义的 artisan make 命令">
+<meta property="og:url" content="https://calmchen.com/posts/3e76fbe4.html">
 <meta property="og:site_name" content="成小琴快跑">
-<meta property="og:description" content="原文地址：PHP类和工具收集    PHP类和工具收集说明这是一个收集php class,以及常用的工具,演示例子等. 功能简介 adminer 这是一个数据库管理工具,单文件,非常好用支持mysql,sqlite,在没有安装phpmyadmin情况下最好的选择;使用后要删除; aliyun 阿里云短信发送演示 baidu 百度翻译演示,百度身份证,银行卡,图片,分词识别 code 验证码类">
+<meta property="og:description" content="Laravel 创建自定义的 artisan make 命令  通过 artisan make:repository 命令自动创建类文件而不是都每次手动创建  1、创建命令类在 app\Console\Commands 文件夹下创建 RepositoryMakeCommand.php 文件 123456789101112131415161718192021222324252627282930313">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-20T09:33:50.000Z">
-<meta property="article:modified_time" content="2022-07-21T02:00:06.652Z">
+<meta property="article:published_time" content="2022-09-04T10:57:54.000Z">
+<meta property="article:modified_time" content="2022-09-05T09:59:19.567Z">
 <meta property="article:author" content="Calm">
-<meta property="article:tag" content="PHP">
-<meta property="article:tag" content="类">
-<meta property="article:tag" content="工具">
+<meta property="article:tag" content="php">
+<meta property="article:tag" content="laravel">
+<meta property="article:tag" content="artisan">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>PHP类和工具收集 - 成小琴快跑</title>
+  <title>Laravel 创建自定义的 artisan make 命令 - 成小琴快跑</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="PHP类和工具收集"></span>
+            <span id="subtitle" data-typed-text="Laravel 创建自定义的 artisan make 命令"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-20 17:33" pubdate>
-          2022年7月20日 下午
+        <time datetime="2022-09-04 18:57" pubdate>
+          2022年9月4日 晚上
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          878 字
+          1.6k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          8 分钟
+          14 分钟
         
       </span>
     
@@ -298,12 +298,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">PHP类和工具收集</h1>
+            <h1 style="display: none">Laravel 创建自定义的 artisan make 命令</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2 个月前
+                    本文最后更新于：几秒前
                   
                 
               </p>
@@ -311,48 +311,31 @@
             
               <div class="markdown-body">
                 
-                <blockquote>
+                <h1 id="Laravel-创建自定义的-artisan-make-命令"><a href="#Laravel-创建自定义的-artisan-make-命令" class="headerlink" title="Laravel 创建自定义的 artisan make 命令"></a>Laravel 创建自定义的 artisan make 命令</h1><hr>
+<blockquote>
+<p>通过 artisan make:repository 命令自动创建类文件而不是都每次手动创建</p>
+</blockquote>
+<h2 id="1、创建命令类"><a href="#1、创建命令类" class="headerlink" title="1、创建命令类"></a>1、创建命令类</h2><p>在 <code>app\Console\Commands</code> 文件夹下创建 <code>RepositoryMakeCommand.php</code> 文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">App</span>\<span class="hljs-title class_">Console</span>\<span class="hljs-title class_">Commands</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Console</span>\<span class="hljs-title">GeneratorCommand</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RepositoryMakeCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">GeneratorCommand</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * The name and signature of the console command.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@var</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$name</span> = <span class="hljs-string">&#x27;make:repository&#x27;</span>;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * The console command description.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@var</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$description</span> = <span class="hljs-string">&#x27;Create a new repository class&#x27;</span>;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * The type of class being generated.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@var</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-variable">$type</span> = <span class="hljs-string">&#x27;Repository&#x27;</span>;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Get the stub file for the generator.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStub</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">__DIR__</span>.<span class="hljs-string">&#x27;/stubs/repository.stub&#x27;</span>;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Get the default namespace for the class.</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span>  string  $rootNamespace</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDefaultNamespace</span>(<span class="hljs-params"><span class="hljs-variable">$rootNamespace</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable">$rootNamespace</span>.<span class="hljs-string">&#x27;\Repositories&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="2、创建命令类对应的模版文件"><a href="#2、创建命令类对应的模版文件" class="headerlink" title="2、创建命令类对应的模版文件"></a>2、创建命令类对应的模版文件</h2><blockquote>
 <ul>
-<li>原文地址：<a target="_blank" rel="noopener" href="https://github.com/logoove/phpclass">PHP类和工具收集</a></li>
+<li>在 <code>app\Console\Commands\stubs</code> 下创建模版文件 <code>.stub</code> 文件是 make 命令生成的类文件的模版，用来定义要生成的类文件的通用部分</li>
+<li><code>repository</code>类 Repository 开发模式的支持</li>
 </ul>
 </blockquote>
-<hr>
-<h3 id="PHP类和工具收集"><a href="#PHP类和工具收集" class="headerlink" title="PHP类和工具收集"></a>PHP类和工具收集</h3><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>这是一个收集php class,以及常用的工具,演示例子等.</p>
-<h3 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h3><ul>
-<li>adminer 这是一个数据库管理工具,单文件,非常好用支持mysql,sqlite,在没有安装phpmyadmin情况下最好的选择;使用后要删除;</li>
-<li>aliyun 阿里云短信发送演示</li>
-<li>baidu 百度翻译演示,百度身份证,银行卡,图片,分词识别</li>
-<li>code 验证码类</li>
-<li>crxml 用于生成xml格式数据,支持生成rss</li>
-<li>AES 解密加密 支持php和js,php使用openssl,支持密钥</li>
-<li>font-image 字体收集,图片生成处理,上传,压缩</li>
-<li>ftp 异常强大的单文件ftp管理工具,删除文件非常快</li>
-<li>geohash 解决计算附近距离,搜索附近的商业点,两个经纬度距离,地理位置应用处理</li>
-<li>hongbao 红包生成类</li>
-<li>ip ip显示地理位置非网络版</li>
-<li>juhe 聚合短信发送和违章查询</li>
-<li>markdown md解析类</li>
-<li>pdo 一个提取自微擎中的pdo方式处理数据库的工具<a target="_blank" rel="noopener" href="https://gitee.com/yoby/pdo">https://gitee.com/yoby/pdo</a></li>
-<li>phpexcel 支持excel的导入导出处理,非常强大,是目前处理excel文件必不可少库,支持xls,xlsx,csv</li>
-<li>spout 支持处理excel的xlsx csv比上面的占用更小的内存以及处理时间,推荐使用php&gt;=5.4,版本2.7.3</li>
-<li>phpqrcode 支持二维码生成,在二维码应用中很常见</li>
-<li>phpQuery 支持抓取网站,进行爬虫,非常强大</li>
-<li>phpword 支持word文件的处理</li>
-<li>pinyin 支持汉字转换拼音</li>
-<li>qnsdk 七牛云存储的sdk</li>
-<li>qreader 支持二维码的读取,目前唯一php写成的读取类</li>
-<li>smarty 模板类,这是精简版本,功能可没有精简</li>
-<li>smtp 发邮,在邮件处理很常用</li>
-<li>tcpdf 读取输出pdf</li>
-<li>we7 微擎自定义函数/通用自定义函数</li>
-<li>zip 压缩成zip和zip管理类</li>
-<li>mock 假数据生成,支持各类数据类型,非常强大,比起flaker更加本土化,原创</li>
-<li>天气,天气生成</li>
-<li>index 是一个首页文件,支持显示php相关配置</li>
-<li>生成头像,完整的一个演示</li>
-<li>行政省市县镇mysql数据</li>
-<li>workerman</li>
-</ul>
+<p>创建 <code>repository.stub</code> 模版文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title class_">DummyNamespace</span>;<br><br><span class="hljs-keyword">use</span> <span class="hljs-title">Prettus</span>\<span class="hljs-title">Repository</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">BaseRepository</span>;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DummyClass</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseRepository</span></span><br><span class="hljs-class"></span>&#123;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * Specify Model class name</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> string</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">model</span>(<span class="hljs-params"></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-comment">//set model name in here, this is necessary!</span><br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="3、注册命令类"><a href="#3、注册命令类" class="headerlink" title="3、注册命令类"></a>3、注册命令类</h2><p>将 <code>RepositoryMakeCommand</code> 添加到 <code>App\Console\Kernel.php</code> 中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-keyword">protected</span> <span class="hljs-variable">$commands</span> = [<br>       <span class="hljs-title class_">Commands\RepositoryMakeCommand</span>::<span class="hljs-variable language_">class</span><br>   ];<br></code></pre></td></tr></table></figure>
+
+<h2 id="4、使用命令"><a href="#4、使用命令" class="headerlink" title="4、使用命令"></a>4、使用命令</h2><p>通过 <code>php artisan make:repository</code> 命令来创建 <code>repository</code> 类文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">php artisan make:repository TestRepository<br><br></code></pre></td></tr></table></figure>
+
+
+
+
 
                 
               </div>
@@ -371,8 +354,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/PHP/" class="category-chain-item">PHP</a>
+  <a href="/categories/Laravel/" class="category-chain-item">Laravel</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Laravel/PHP/" class="category-chain-item">PHP</a>
+  
+  
+
   
 
       </span>
@@ -386,11 +376,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/PHP/">#PHP</a>
+        <a href="/tags/php/">#php</a>
       
-        <a href="/tags/%E7%B1%BB/">#类</a>
+        <a href="/tags/laravel/">#laravel</a>
       
-        <a href="/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+        <a href="/tags/artisan/">#artisan</a>
       
     </div>
   
@@ -402,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>PHP类和工具收集</div>
-      <div>https://calmchen.com/posts/d9c1a184.html</div>
+      <div>Laravel 创建自定义的 artisan make 命令</div>
+      <div>https://calmchen.com/posts/3e76fbe4.html</div>
     </div>
     <div class="license-meta">
       
@@ -415,13 +405,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月20日</div>
+          <div>2022年9月4日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月21日</div>
+          <div>2022年9月5日</div>
         </div>
       
       
@@ -452,18 +442,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/c8bf02f0.html" title="Laravel Wiki">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Laravel Wiki</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/e605fc7c.html" title="PHP 资源大全中文版">
-                        <span class="hidden-mobile">PHP 资源大全中文版</span>
+                      <a href="/posts/c058a5a3.html" title="Mysql事务、锁和MVCC">
+                        <span class="hidden-mobile">Mysql事务、锁和MVCC</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
