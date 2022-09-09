@@ -65,15 +65,6 @@
   </url>
   
   <url>
-    <loc>https://calmchen.com/posts/c8bf02f0.html</loc>
-    
-    <lastmod>2022-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://calmchen.com/posts/3066d4bb.html</loc>
     
     <lastmod>2022-08-23</lastmod>
@@ -418,7 +409,7 @@
 
   <url>
     <loc>https://calmchen.com/</loc>
-    <lastmod>2022-09-05</lastmod>
+    <lastmod>2022-09-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
